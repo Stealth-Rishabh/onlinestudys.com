@@ -1,0 +1,35 @@
+# Force HTTP to HTTPS, non-www to www, and all variations to https://www.nocolleges.com
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect all HTTP and non-www requests to https://www.nocolleges.com
+  RewriteCond %{HTTP_HOST} !^www\. [NC,OR]
+  RewriteCond %{HTTPS} !on [NC]
+  RewriteRule ^ https://www.nocolleges.com%{REQUEST_URI} [L,R=301,NE]
+
+  # Serve existing files/directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Skip React routing for /blog
+  RewriteRule ^blog($|/) - [L]
+
+  # Redirect all other routes to index.html for React
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Updated CORS headers
+  Header always set Access-Control-Allow-Origin "https://www.nocolleges.com"
+  Header always set Access-Control-Allow-Methods "POST, OPTIONS"
+  Header always set Access-Control-Allow-Headers "Content-Type"
+  
+  # Handle OPTIONS request
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
