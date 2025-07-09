@@ -1,59 +1,53 @@
-import { CalendarDays } from "lucide-react";
-import Image from "next/image";
+"use client";
 
-const AmityPage = () => {
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import HeroSection from "@/components/amity/HeroSection";
+import Stats from "@/components/amity/Stats";
+import ProgramHighlights from "@/components/amity/ProgramHighlights";
+import KeySpecializations from "@/components/amity/KeySpecializations";
+import WhoShouldEnroll from "@/components/amity/WhoShouldEnroll";
+import Hallmarks from "@/components/amity/Hallmarks";
+import Benefits from "@/components/amity/Benefits";
+import FAQ from "@/components/amity/FAQ";
+import AdmissionQuery from "@/components/amity/AdmissionQuery";
+
+function AmityPageContent() {
+  const searchParams = useSearchParams();
+  const [utmParams, setUtmParams] = useState({});
+
+  useEffect(() => {
+    const params = {
+      utm_source: searchParams.get("utm_source"),
+      utm_medium: searchParams.get("utm_medium"),
+      utm_campaign: searchParams.get("utm_campaign"),
+      utm_term: searchParams.get("utm_term"),
+      utm_content: searchParams.get("utm_content"),
+      campaign: searchParams.get("campaign"),
+    };
+    setUtmParams(params);
+    localStorage.setItem("utmParams", JSON.stringify(params));
+  }, [searchParams]);
+
   return (
-    <section
-      className="py-10 sm:py-16 px-4 bg-white relative min-h-[calc(100vh-72px)] lg:h-[calc(100vh-72px)] bg-cover bg-center bg-no-repeat z-0"
-      style={{
-        backgroundImage: "url('/banners/amity.png')",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-      <div className="max-w-7xl px-4 mx-auto h-full flex items-center relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center w-full">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-2xl sm:text-5xl text-white">
-              Master Business. <br /> Your Way. Your Pace.
-            </h1>
-            <p className="text-white text-5xl sm:text-6xl font-bold">
-              Online MBA
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-5 items-start sm:items-center">
-              <button className="bg-gradient-to-r from-green-400 to-green-600 text-white px-10 py-2 w-full sm:w-auto rounded-md">
-                Apply Now
-              </button>
-              <Image
-                src="https://cdn-websites.talentedge.com/DYPATIL/www/wwwroot/dypatiledu.com/assets/img/zero_cost_emi_available.svg"
-                alt="Amity University"
-                width={100}
-                height={100}
-                className="w-auto h-auto max-h-[80px]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-7xl px-4 mx-auto grid grid-cols-1 mt-10 lg:mt-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 relative z-20">
-        <div className="flex items-center gap-3 bg-white/10 backdrop-blur-2xl p-4 rounded-md">
-          <CalendarDays className="w-6 h-6 text-white" />
-          <p className="text-white text-sm">2 year program</p>
-        </div>
-        <div className="flex items-center gap-3 bg-white/10 backdrop-blur-2xl p-4 rounded-md">
-          <CalendarDays className="w-6 h-6 text-white" />
-          <p className="text-white text-sm">At par with on-campus degree</p>
-        </div>
-        <div className="flex items-center gap-3 bg-white/10 backdrop-blur-2xl p-4 rounded-md">
-          <CalendarDays className="w-6 h-6 text-white" />
-          <p className="text-white text-sm">Masterclass by Industry Experts</p>
-        </div>
-        <div className="flex items-center gap-3 bg-white/10 backdrop-blur-2xl p-4 rounded-md">
-          <CalendarDays className="w-6 h-6 text-white" />
-          <p className="text-white text-sm">Trusted by 10,000+ learners</p>
-        </div>
-      </div>
-    </section>
+    <>
+      <AdmissionQuery utmParams={utmParams} />
+      <HeroSection />
+      <Stats />
+      <ProgramHighlights />
+      <KeySpecializations />
+      <Hallmarks />
+      <WhoShouldEnroll />
+      <Benefits />
+      <FAQ />
+    </>
   );
-};
+}
 
-export default AmityPage;
+export default function AmityPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AmityPageContent />
+    </Suspense>
+  );
+}
