@@ -13,7 +13,7 @@ export default function KeySpecializations() {
       title: "MBA With Dual Specialization",
       shortTitle: "Dual Specialization",
       description:
-        "Master two specializations simultaneously for comprehensive business expertise and enhanced career opportunities",
+        "Master two specializations for comprehensive business expertise and career growth.",
       icon: "⚡",
       bgIcon: "📊📈",
       gradient: "from-blue-500 to-cyan-500",
@@ -29,7 +29,7 @@ export default function KeySpecializations() {
       title: "MBA In General Management",
       shortTitle: "General Management",
       description:
-        "Comprehensive business foundation covering all core management disciplines for versatile leadership roles",
+        "Complete business foundation covering all core management disciplines effectively.",
       icon: "🏢",
       bgIcon: "🎯🏛️",
       gradient: "from-purple-500 to-pink-500",
@@ -41,7 +41,7 @@ export default function KeySpecializations() {
       title: "International Finance",
       shortTitle: "International Finance",
       description:
-        "Global financial markets, international banking, and cross-border investment strategies expertise",
+        "Global financial markets expertise and cross-border investment strategies.",
       icon: "🌍",
       bgIcon: "💰💱",
       gradient: "from-green-500 to-emerald-500",
@@ -53,7 +53,7 @@ export default function KeySpecializations() {
       title: "Digital Entrepreneurship",
       shortTitle: "Digital Entrepreneurship",
       description:
-        "Innovation-driven business creation, startup ecosystems, and digital transformation leadership",
+        "Innovation-driven business creation and digital transformation leadership skills.",
       icon: "🚀",
       bgIcon: "💡🔥",
       gradient: "from-orange-500 to-red-500",
@@ -69,7 +69,7 @@ export default function KeySpecializations() {
       title: "Business Analytics",
       shortTitle: "Business Analytics",
       description:
-        "Data-driven decision making, predictive modeling, and business intelligence for strategic insights",
+        "Data-driven decision making and predictive modeling for strategic insights.",
       icon: "📊",
       bgIcon: "📈🔍",
       gradient: "from-indigo-500 to-blue-500",
@@ -85,7 +85,7 @@ export default function KeySpecializations() {
       title: "Data Science",
       shortTitle: "Data Science",
       description:
-        "Advanced analytics, machine learning, and artificial intelligence applications in business contexts",
+        "Advanced analytics and machine learning applications for business innovation.",
       icon: "🧠",
       bgIcon: "🤖⚗️",
       gradient: "from-teal-500 to-cyan-500",
@@ -97,7 +97,7 @@ export default function KeySpecializations() {
       title: "HR Analytics",
       shortTitle: "HR Analytics",
       description:
-        "People analytics, workforce optimization, and human capital management through data-driven insights",
+        "People analytics and workforce optimization through data-driven insights.",
       icon: "👥",
       bgIcon: "📋💼",
       gradient: "from-pink-500 to-rose-500",
@@ -113,7 +113,7 @@ export default function KeySpecializations() {
       title: "Digital Marketing Management",
       shortTitle: "Digital Marketing",
       description:
-        "Modern marketing strategies, digital channels, and customer engagement in the digital ecosystem",
+        "Modern marketing strategies and customer engagement in digital ecosystem.",
       icon: "📱",
       bgIcon: "📢🎯",
       gradient: "from-yellow-500 to-orange-500",
@@ -127,10 +127,10 @@ export default function KeySpecializations() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
             Choose Your Career Path
-          </div>
+          </div> */}
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             MBA{" "}
