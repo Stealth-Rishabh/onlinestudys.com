@@ -24,7 +24,7 @@ export default function Stats() {
       id: 3,
       title: "AI-Powered Learning",
       value: "Prof. Ami",
-      subtitle: "Personal AI Tutor",
+      subtitle: "Your Personal AI Tutor",
       icon: Brain,
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
