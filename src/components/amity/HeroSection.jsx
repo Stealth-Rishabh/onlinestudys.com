@@ -296,18 +296,14 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="pt-4 lg:pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 lg:gap-4">
-              <button
-                onClick={openAdmissionForm}
-                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
-              >
-                <span>Apply Now</span>
-                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
-              </button>
-              <button className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-semibold text-sm lg:text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
-                <Play className="w-4 h-4 lg:w-5 lg:h-5" />
-                <span>Watch Program Intro</span>
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-5 items-center scale-50 md:scale-100">
+              <Image
+                src="https://cdn-websites.talentedge.com/DYPATIL/www/wwwroot/dypatiledu.com/assets/img/zero_cost_emi_available.svg"
+                alt="Amity University"
+                width={100}
+                height={100}
+                className="w-auto h-auto max-h-[80px]"
+              />
             </div>
           </div>
           <div className="w-full lg:w-5/12 relative">
