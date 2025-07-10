@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useAdmissionForm } from "@/context/AdmissionFormContext";
 
 export default function ProgramHighlights() {
+  const { openAdmissionForm } = useAdmissionForm();
+
   const highlights = [
     {
       id: 1,
@@ -56,7 +59,7 @@ export default function ProgramHighlights() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"
@@ -65,7 +68,7 @@ export default function ProgramHighlights() {
               />
             </svg>
             <span>Premium MBA Experience</span>
-          </div>
+          </div> */}
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Program Highlights &
@@ -126,7 +129,7 @@ export default function ProgramHighlights() {
                 </p>
 
                 {/* Interactive Arrow */}
-                <div className="mt-4 flex items-center justify-between">
+                {/* <div className="mt-4 flex items-center justify-between">
                   <div
                     className={`w-8 h-8 rounded-full bg-gradient-to-r ${highlight.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                   >
@@ -150,7 +153,7 @@ export default function ProgramHighlights() {
                   >
                     Learn More
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Hover Glow Effect */}
@@ -163,7 +166,10 @@ export default function ProgramHighlights() {
 
         {/* Bottom CTA Section */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <button
+            onClick={openAdmissionForm}
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <svg
               className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
               fill="currentColor"
@@ -177,7 +183,7 @@ export default function ProgramHighlights() {
             </svg>
             <span>Explore All Program Benefits</span>
             <div className="w-2 h-2 bg-white/30 rounded-full animate-ping"></div>
-          </div>
+          </button>
         </div>
       </div>
     </section>

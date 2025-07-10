@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useAdmissionForm } from "@/context/AdmissionFormContext";
 
 export default function KeySpecializations() {
   const [activeSpec, setActiveSpec] = useState(0);
+  const { openAdmissionForm } = useAdmissionForm();
 
   const specializations = [
     {
@@ -163,7 +165,10 @@ export default function KeySpecializations() {
           {/* Active Specialization Details */}
           <div className="lg:col-span-1">
             <div className="sticky top-8">
-              <SpecializationDetails spec={specializations[activeSpec]} />
+              <SpecializationDetails
+                spec={specializations[activeSpec]}
+                openAdmissionForm={openAdmissionForm}
+              />
             </div>
           </div>
         </div>
@@ -257,7 +262,7 @@ function SpecializationCard({ spec, index, isActive, onClick }) {
 }
 
 // Enhanced Specialization Details Component
-function SpecializationDetails({ spec }) {
+function SpecializationDetails({ spec, openAdmissionForm }) {
   return (
     <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
       {/* Header with Dynamic Background */}
@@ -312,6 +317,7 @@ function SpecializationDetails({ spec }) {
 
       {/* Enhanced Action Button */}
       <button
+        onClick={openAdmissionForm}
         className={`w-full bg-gradient-to-r ${spec.gradient} text-white py-4 px-6 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden group`}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
