@@ -7,6 +7,7 @@ import Stats from "@/components/parul/Stats";
 import Benefits from "@/components/parul/Benefits";
 import FAQ from "@/components/parul/FAQ";
 import FloatingAdmissionButton from "@/components/parul/FloatingAdmissionButton";
+import Hallmarks from "@/components/parul/Hallmarks";
 
 export default function ParulPage() {
   return (
@@ -15,6 +16,7 @@ export default function ParulPage() {
       <Stats />
       <ProgramHighlights />
       <KeySpecializations />
+      <Hallmarks />
       <Benefits />
       <FAQ />
 

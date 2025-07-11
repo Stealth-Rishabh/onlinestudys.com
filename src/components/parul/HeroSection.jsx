@@ -294,7 +294,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="pt-4 lg:pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 lg:gap-4">
+            {/* <div className="pt-4 lg:pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 lg:gap-4">
               <button
                 onClick={openAdmissionForm}
                 className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
@@ -306,7 +306,7 @@ export default function HeroSection() {
                 <Play className="w-4 h-4 lg:w-5 lg:h-5" />
                 <span>Watch Program Intro</span>
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="w-full lg:w-5/12 relative">
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-2xl w-full max-w-xs mx-auto lg:max-w-none lg:mt-6">
@@ -314,7 +314,7 @@ export default function HeroSection() {
               <div className="text-center mb-4 lg:mb-6">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400/20 to-red-400/20 backdrop-blur-sm border border-orange-400/30 text-orange-300 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold mb-2 lg:mb-4">
                   <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-                  <span>Limited Time Offer</span>
+                  <span>Admission Open</span>
                 </div>
                 <h2 className="text-xl lg:text-3xl font-bold text-white">
                   Get Free Admission Counseling
@@ -417,7 +417,7 @@ export default function HeroSection() {
               </form>
 
               {/* Trust Indicators */}
-              <div className="mt-3 lg:mt-6 flex items-center justify-center gap-2 lg:gap-4 text-gray-300 text-xs lg:text-sm">
+              {/* <div className="mt-3 lg:mt-6 flex items-center justify-center gap-2 lg:gap-4 text-gray-300 text-xs lg:text-sm">
                 <div className="flex items-center gap-1">
                   <div className="w-1 h-1 lg:w-2 lg:h-2 bg-orange-400 rounded-full"></div>
                   <span>Secure</span>
@@ -430,7 +430,7 @@ export default function HeroSection() {
                   <div className="w-1 h-1 lg:w-2 lg:h-2 bg-yellow-400 rounded-full"></div>
                   <span>Expert Guidance</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
