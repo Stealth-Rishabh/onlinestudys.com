@@ -38,7 +38,8 @@ const formFields = [
   {
     name: "coursesid",
     type: "hidden",
-    value: "PARUL_MBA_2024",
+    // FIXME: Replace with actual Galgotias course ID
+    value: "GALGOTIAS_ONLINE_MBA",
   },
   {
     name: "state",
@@ -66,7 +67,8 @@ const initialFormData = {
   name: "",
   email: "",
   phone: "",
-  coursesid: "PARUL_MBA_2024",
+  // FIXME: Replace with actual Galgotias course ID
+  coursesid: "GALGOTIAS_ONLINE_MBA",
   state: "",
   city: "",
 };
@@ -124,6 +126,7 @@ export default function HeroSection() {
     // Validate all fields
     const newErrors = {};
     formFields.forEach((field) => {
+      if (field.type === "hidden") return;
       const error = validateField(field.name, formData[field.name]);
       if (error) newErrors[field.name] = error;
     });
@@ -233,7 +236,7 @@ export default function HeroSection() {
     <section
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/banners/Parul.png')",
+        backgroundImage: "url('/banners/graduation-cap.jpg')",
       }}
     >
       {/* Enhanced Background Overlay */}
@@ -241,151 +244,113 @@ export default function HeroSection() {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-6 lg:py-0 lg:min-h-[calc(100vh-72px)] lg:flex lg:items-center">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center w-full">
-          {/* Left Content */}
-          <div className="w-full lg:w-7/12 space-y-4 lg:space-y-8 text-center lg:text-left">
-            {/* Ranking Badge */}
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400/20 to-red-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-300 px-3 py-2 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold">
-              <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-              <span>NAAC A+ Accredited University</span>
-            </div>
-
-            {/* Main Heading */}
-            <div className="space-y-2 lg:space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-                <span className="block">Admission Open</span>
-                <span className="block bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent">
-                  For Online MBA
-                </span>
-              </h1>
-
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 lg:gap-3 text-sm sm:text-base lg:text-xl xl:text-2xl text-gray-200">
-                <Award className="w-4 h-4 lg:w-6 lg:h-6 text-orange-400 flex-shrink-0" />
-                <span className="text-center lg:text-left">
-                  Top 50 in India for Innovation • Parul University Online
-                </span>
+          {/* Left Side: Content */}
+          <div className="text-white lg:w-3/5 space-y-6 text-center lg:text-left">
+            <div className="inline-block bg-white/10 p-2 rounded-full">
+              <div className="flex items-center gap-2 text-sm px-2">
+                <Image
+                  src="/universities/galgotia-logo.png" // Assumed logo path
+                  alt="Galgotias University Logo"
+                  width={24}
+                  height={24}
+                  className="rounded-full"
+                />
+                <span>Galgotias University Online MBA</span>
               </div>
             </div>
 
-            {/* Key Highlights */}
-            <div className="grid grid-cols-2 gap-2 lg:gap-4 text-white max-w-md mx-auto lg:max-w-none lg:mx-0">
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">
-                  NAAC A++ Accredited
-                </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+              Advance Your Career with India’s Best UGC-Entitled Online MBA
+              Program
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
+              Our industry-focused curriculum, taught by leading faculty,
+              prepares you for success by focusing on core business principles
+              and fostering an entrepreneurial mindset.
+            </p>
+
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
+              <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+                <Award className="w-5 h-5 text-yellow-400" />
+                <span>NAAC A+ Accredited</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-red-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">UGC Approved</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-yellow-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">50k+ Alumni</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-green-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">Live Classes</span>
+              <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+                <Star className="w-5 h-5 text-yellow-400" />
+                <span>NIRF Innovation Ranking (51-100)</span>
               </div>
             </div>
-
-            {/* CTA Buttons */}
           </div>
-          <div className="w-full lg:w-5/12 relative">
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-2xl w-full max-w-xs mx-auto lg:max-w-none lg:mt-6">
-              {/* Form Header */}
-              <div className="text-center mb-4 lg:mb-6">
-                <div
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400/20 
-                to-red-400/20 backdrop-blur-sm border border-orange-400/30 text-orange-300 px-3 py-1.5 
-                lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold mb-2 lg:mb-4"
-                >
-                  <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-                  <span>Admission Open</span>
-                </div>
-                <h2 className="text-xl lg:text-3xl font-bold text-white">
-                  Get Free Admission Counseling
-                </h2>
-                <p className="text-gray-300 text-xs lg:text-sm">
-                  Speak with our experts and get personalized guidance
-                </p>
-              </div>
 
-              {/* Admission Form */}
-              <form
-                className="space-y-2.5 lg:space-y-4"
-                onSubmit={handleSubmit}
-              >
-                {formFields.map((field) =>
-                  field.type !== "hidden" ? (
+          {/* Right Side: Form */}
+          <div className="w-full lg:w-2/5">
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl shadow-2xl p-6 lg:p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white text-center mb-1">
+                Apply for Admission
+              </h3>
+              <p className="text-gray-300 text-center mb-6">
+                Get a call back from our experts
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                {formFields.map((field) => {
+                  if (field.type === "hidden") return null;
+                  return (
                     <div key={field.name}>
+                      <label
+                        htmlFor={field.name}
+                        className="block text-sm font-medium text-gray-200 mb-1"
+                      >
+                        {field.label}
+                      </label>
                       {field.type === "select" ? (
                         <select
+                          id={field.name}
                           name={field.name}
                           value={formData[field.name]}
                           onChange={handleChange}
-                          className={`w-full px-3 py-2 lg:px-4 lg:py-3 bg-white/10 border ${
+                          className={`w-full p-3 bg-white/20 text-white rounded-md border ${
                             errors[field.name]
-                              ? "border-red-400"
-                              : "border-white/20"
-                          } rounded-lg lg:rounded-xl text-white text-sm lg:text-base focus:outline-none focus:ring-1 focus:ring-orange-400/50 focus:border-orange-400/50 transition-all duration-300`}
+                              ? "border-red-500"
+                              : "border-transparent"
+                          } focus:ring-2 focus:ring-blue-500 focus:outline-none transition`}
                           required={field.required}
                         >
-                          <option value="" className="bg-gray-800 text-white">
-                            {field.placeholder}
-                          </option>
-                          {field.name === "city" && cities.length > 0
-                            ? cities.map((city) => (
-                                <option
-                                  key={city}
-                                  value={city}
-                                  className="bg-gray-800 text-white"
-                                >
-                                  {city}
-                                </option>
-                              ))
-                            : field.options.map((option) => (
-                                <option
-                                  key={
-                                    typeof option === "object"
-                                      ? option.value
-                                      : option
-                                  }
-                                  value={
-                                    typeof option === "object"
-                                      ? option.value
-                                      : option
-                                  }
-                                  className="bg-gray-800 text-white"
-                                >
-                                  {typeof option === "object"
-                                    ? option.label
-                                    : option}
-                                </option>
-                              ))}
+                          <option value="">{field.placeholder}</option>
+                          {(field.name === "city" ? cities : field.options).map(
+                            (option, index) => (
+                              <option
+                                key={index}
+                                value={option.value || option}
+                              >
+                                {option.label || option}
+                              </option>
+                            )
+                          )}
                         </select>
                       ) : (
                         <input
                           type={field.type}
+                          id={field.name}
                           name={field.name}
+                          placeholder={field.placeholder}
                           value={formData[field.name]}
                           onChange={handleChange}
-                          placeholder={field.placeholder}
-                          className={`w-full px-3 py-2 lg:px-4 lg:py-3 bg-white/10 border ${
-                            errors[field.name]
-                              ? "border-red-400"
-                              : "border-white/20"
-                          } rounded-lg lg:rounded-xl text-white placeholder-gray-300 text-sm lg:text-base focus:outline-none focus:ring-1 focus:ring-orange-400/50 focus:border-orange-400/50 transition-all duration-300`}
-                          required={field.required}
                           onBlur={
                             field.name === "phone" ? handlePhoneBlur : undefined
                           }
+                          className={`w-full p-3 bg-white/20 text-white rounded-md border ${
+                            errors[field.name]
+                              ? "border-red-500"
+                              : "border-transparent"
+                          } focus:ring-2 focus:ring-blue-500 focus:outline-none transition`}
+                          required={field.required}
                         />
                       )}
                       {errors[field.name] && (
@@ -394,18 +359,25 @@ export default function HeroSection() {
                         </p>
                       )}
                     </div>
-                  ) : null
-                )}
+                  );
+                })}
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2.5 lg:px-6 lg:py-4 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group disabled:opacity-70"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>
-                    {isSubmitting ? "Submitting..." : "Get Free Counseling"}
-                  </span>
-                  <Send className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Apply Now</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>

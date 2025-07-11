@@ -1,10 +1,11 @@
-import Image from "next/image";
 import { useState } from "react";
-import { useAdmissionForm } from "@/context/AdmissionFormContext";
-import { Star, Award, Play, ArrowRight, Send } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { X, MessageCircle, Send } from "lucide-react";
 import { submitAdmissionQuery } from "@/lib/crm";
+
 import { toast } from "sonner";
 import { getAllStates, getCitiesForState } from "@/lib/stateData";
+import { useAdmissionForm } from "@/context/AdmissionFormContext";
 
 const formFields = [
   {
@@ -38,7 +39,7 @@ const formFields = [
   {
     name: "coursesid",
     type: "hidden",
-    value: "PARUL_MBA_2024",
+    value: "OGLAMBA201",
   },
   {
     name: "state",
@@ -66,23 +67,18 @@ const initialFormData = {
   name: "",
   email: "",
   phone: "",
-  coursesid: "PARUL_MBA_2024",
+  coursesid: "OGLAMBA201",
   state: "",
   city: "",
 };
 
-export default function HeroSection() {
-  const { openAdmissionForm } = useAdmissionForm();
+export default function AdmissionQuery({ utmParams }) {
+  const { isAdmissionFormOpen, openAdmissionForm, closeAdmissionForm } =
+    useAdmissionForm();
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cities, setCities] = useState([]);
-
-  // Get UTM params from localStorage (similar to AdmissionQuery)
-  const utmParams =
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("utmParams") || "{}")
-      : {};
 
   const handleChange = (e) => {
     let { name, value } = e.target;
@@ -190,6 +186,7 @@ export default function HeroSection() {
         }
         setFormData(initialFormData);
         setErrors({});
+        closeAdmissionForm();
         window.location.href = "/thankyou.html";
       } else {
         // Handle error case
@@ -230,123 +227,92 @@ export default function HeroSection() {
   };
 
   return (
-    <section
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/banners/Parul.png')",
-      }}
-    >
-      {/* Enhanced Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/70 to-black/60"></div>
+    <>
+      <AnimatePresence>
+        {!isAdmissionFormOpen && (
+          <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
+            <div className="relative flex items-center">
+              {/* Vertical Text Label */}
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
-      </div>
-
-      <div className="relative z-20 max-w-7xl mx-auto px-4 py-6 lg:py-0 lg:min-h-[calc(100vh-72px)] lg:flex lg:items-center">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center w-full">
-          {/* Left Content */}
-          <div className="w-full lg:w-7/12 space-y-4 lg:space-y-8 text-center lg:text-left">
-            {/* Ranking Badge */}
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400/20 to-red-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-300 px-3 py-2 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold">
-              <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-              <span>NAAC A+ Accredited University</span>
-            </div>
-
-            {/* Main Heading */}
-            <div className="space-y-2 lg:space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-                <span className="block">Admission Open</span>
-                <span className="block bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent">
-                  For Online MBA
-                </span>
-              </h1>
-
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 lg:gap-3 text-sm sm:text-base lg:text-xl xl:text-2xl text-gray-200">
-                <Award className="w-4 h-4 lg:w-6 lg:h-6 text-orange-400 flex-shrink-0" />
-                <span className="text-center lg:text-left">
-                  Top 50 in India for Innovation • Parul University Online
-                </span>
-              </div>
-            </div>
-
-            {/* Key Highlights */}
-            <div className="grid grid-cols-2 gap-2 lg:gap-4 text-white max-w-md mx-auto lg:max-w-none lg:mx-0">
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-orange-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">
-                  NAAC A++ Accredited
-                </span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-red-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">UGC Approved</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-yellow-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">50k+ Alumni</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-green-400 rounded-full flex-shrink-0"></div>
-                <span className="text-xs lg:text-base">Live Classes</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-          </div>
-          <div className="w-full lg:w-5/12 relative">
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-2xl w-full max-w-xs mx-auto lg:max-w-none lg:mt-6">
-              {/* Form Header */}
-              <div className="text-center mb-4 lg:mb-6">
-                <div
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400/20 
-                to-red-400/20 backdrop-blur-sm border border-orange-400/30 text-orange-300 px-3 py-1.5 
-                lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold mb-2 lg:mb-4"
-                >
-                  <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-                  <span>Admission Open</span>
-                </div>
-                <h2 className="text-xl lg:text-3xl font-bold text-white">
-                  Get Free Admission Counseling
-                </h2>
-                <p className="text-gray-300 text-xs lg:text-sm">
-                  Speak with our experts and get personalized guidance
-                </p>
-              </div>
-
-              {/* Admission Form */}
-              <form
-                className="space-y-2.5 lg:space-y-4"
-                onSubmit={handleSubmit}
+              {/* Main Floating Button */}
+              <button
+                onClick={openAdmissionForm}
+                className="relative group bg-gradient-to-r from-orange-500 to-red-600 text-white p-4 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-110"
               >
-                {formFields.map((field) =>
-                  field.type !== "hidden" ? (
+                {/* Pulse Animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-full animate-ping opacity-40"></div>
+
+                {/* Icon */}
+                <div className="relative z-10">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+
+                {/* Notification Badge */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {isAdmissionFormOpen && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeAdmissionForm}
+            />
+
+            <motion.div
+              className="fixed px-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm z-50 rounded-xl shadow-2xl"
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 1000 }}
+            >
+              <div className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl">
+                <div className="flex justify-between items-center mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold bg-gray-900 text-transparent bg-clip-text">
+                      Apply for Online MBA
+                    </h2>
+                  </div>
+                  <button
+                    onClick={closeAdmissionForm}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X className="w-5 h-5 text-gray-500" />
+                  </button>
+                </div>
+
+                <form onSubmit={handleSubmit} className="grid gap-3">
+                  {formFields.map((field) => (
                     <div key={field.name}>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {field.label}
+                        {field.required && (
+                          <span className="text-red-500">*</span>
+                        )}
+                      </label>
                       {field.type === "select" ? (
                         <select
                           name={field.name}
                           value={formData[field.name]}
                           onChange={handleChange}
-                          className={`w-full px-3 py-2 lg:px-4 lg:py-3 bg-white/10 border ${
+                          className={`w-full p-3 rounded-lg border ${
                             errors[field.name]
-                              ? "border-red-400"
-                              : "border-white/20"
-                          } rounded-lg lg:rounded-xl text-white text-sm lg:text-base focus:outline-none focus:ring-1 focus:ring-orange-400/50 focus:border-orange-400/50 transition-all duration-300`}
+                              ? "border-red-500"
+                              : "border-gray-200"
+                          } bg-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all duration-200`}
                           required={field.required}
                         >
-                          <option value="" className="bg-gray-800 text-white">
-                            {field.placeholder}
-                          </option>
+                          <option value="">{field.placeholder}</option>
                           {field.name === "city" && cities.length > 0
                             ? cities.map((city) => (
-                                <option
-                                  key={city}
-                                  value={city}
-                                  className="bg-gray-800 text-white"
-                                >
+                                <option key={city} value={city}>
                                   {city}
                                 </option>
                               ))
@@ -362,7 +328,6 @@ export default function HeroSection() {
                                       ? option.value
                                       : option
                                   }
-                                  className="bg-gray-800 text-white"
                                 >
                                   {typeof option === "object"
                                     ? option.label
@@ -377,11 +342,11 @@ export default function HeroSection() {
                           value={formData[field.name]}
                           onChange={handleChange}
                           placeholder={field.placeholder}
-                          className={`w-full px-3 py-2 lg:px-4 lg:py-3 bg-white/10 border ${
+                          className={`w-full p-3 rounded-lg border ${
                             errors[field.name]
-                              ? "border-red-400"
-                              : "border-white/20"
-                          } rounded-lg lg:rounded-xl text-white placeholder-gray-300 text-sm lg:text-base focus:outline-none focus:ring-1 focus:ring-orange-400/50 focus:border-orange-400/50 transition-all duration-300`}
+                              ? "border-red-500"
+                              : "border-gray-200"
+                          } bg-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all duration-200`}
                           required={field.required}
                           onBlur={
                             field.name === "phone" ? handlePhoneBlur : undefined
@@ -389,29 +354,27 @@ export default function HeroSection() {
                         />
                       )}
                       {errors[field.name] && (
-                        <p className="text-red-400 text-xs mt-1">
+                        <p className="text-red-500 text-sm mt-1">
                           {errors[field.name]}
                         </p>
                       )}
                     </div>
-                  ) : null
-                )}
+                  ))}
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2.5 lg:px-6 lg:py-4 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group disabled:opacity-70"
-                >
-                  <span>
-                    {isSubmitting ? "Submitting..." : "Get Free Counseling"}
-                  </span>
-                  <Send className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full p-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm font-medium mt-2 flex items-center justify-center gap-2 group disabled:opacity-70"
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Query"}
+                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

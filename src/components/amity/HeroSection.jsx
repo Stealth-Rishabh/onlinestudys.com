@@ -310,10 +310,10 @@ export default function HeroSection() {
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-2xl w-full max-w-xs mx-auto lg:max-w-none lg:mt-6">
               {/* Form Header */}
               <div className="text-center mb-4 lg:mb-6">
-                {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400/20 to-blue-400/20 backdrop-blur-sm border border-green-400/30 text-green-300 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold mb-2 lg:mb-4">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400/20 to-blue-400/20 backdrop-blur-sm border border-green-400/30 text-green-300 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold mb-2 lg:mb-4">
                   <Star className="w-3 h-3 lg:w-4 lg:h-4 fill-current" />
-                  <span>Limited Time Offer</span>
-                </div> */}
+                  <span>Admission Open</span>
+                </div>
                 <h2 className="text-xl lg:text-3xl font-bold text-white">
                   Get Free Admission Counseling
                 </h2>
@@ -416,41 +416,41 @@ export default function HeroSection() {
 
               {/* Form Benefits */}
               {/* <div className="mt-4 lg:mt-8 pt-3 lg:pt-6 border-t border-white/20">
-                <div className="grid grid-cols-3 gap-2 lg:gap-4 text-center">
-                  <div>
-                    <div className="text-xs lg:text-2xl font-bold text-green-400">
-                      24/7
-                    </div>
-                    <div className="text-xs text-gray-300">Support</div>
-                  </div>
-                  <div>
-                    <div className="text-xs lg:text-2xl font-bold text-blue-400">
-                      100%
-                    </div>
-                    <div className="text-xs text-gray-300">Free</div>
-                  </div>
-                  <div>
-                    <div className="text-xs lg:text-2xl font-bold text-purple-400">
-                      5 Min
-                    </div>
-                    <div className="text-xs text-gray-300">Response</div>
-                  </div>
-                </div>
+      <div className="grid grid-cols-3 gap-2 lg:gap-4 text-center">
+        <div>
+          <div className="text-xs lg:text-2xl font-bold text-green-400">
+            24/7
+          </div>
+          <div className="text-xs text-gray-300">Support</div>
+        </div>
+        <div>
+          <div className="text-xs lg:text-2xl font-bold text-blue-400">
+            100%
+          </div>
+          <div className="text-xs text-gray-300">Free</div>
+        </div>
+        <div>
+          <div className="text-xs lg:text-2xl font-bold text-purple-400">
+            5 Min
+          </div>
+          <div className="text-xs text-gray-300">Response</div>
+        </div>
+      </div>
               </div> */}
 
               {/* Trust Indicators */}
               {/* <div className="mt-3 lg:mt-6 flex items-center justify-center gap-2 lg:gap-4 text-gray-300 text-xs lg:text-sm">
-                <div className="flex items-center gap-1">
-                  <div className="w-1 h-1 lg:w-2 lg:h-2 bg-green-400 rounded-full"></div>
-                  <span>Secure</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <div className="w-1 h-1 lg:w-2 lg:h-2 bg-blue-400 rounded-full"></div>
-                  <span>No Spam</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <div className="w-1 h-1 lg:w-2 lg:h-2 bg-purple-400 rounded-full"></div>
-                  <span>Expert Guidance</span>
+      <div className="flex items-center gap-1">
+        <div className="w-1 h-1 lg:w-2 lg:h-2 bg-green-400 rounded-full"></div>
+        <span>Secure</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <div className="w-1 h-1 lg:w-2 lg:h-2 bg-blue-400 rounded-full"></div>
+        <span>No Spam</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <div className="w-1 h-1 lg:w-2 lg:h-2 bg-purple-400 rounded-full"></div>
+        <span>Expert Guidance</span>
                 </div>
               </div> */}
             </div>
