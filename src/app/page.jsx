@@ -9,6 +9,7 @@ import Benefits from "@/components/home/Benefits";
 import FAQ from "@/components/home/FAQ";
 import AdmissionQuery from "@/components/home/AdmissionQuery";
 import Banner from "@/components/home/Banner";
+import { AccreditationLogoMobile } from "@/components/ui/AccreditationLogoMobile";
 
 function LandingPageContent() {
   const searchParams = useSearchParams();
@@ -33,6 +34,7 @@ function LandingPageContent() {
       <AdmissionQuery utmParams={utmParams} />
       {/* <HeroSection /> */}
       <Banner />
+      <AccreditationLogoMobile />
       <Universities />
       <WhoShouldEnroll />
       <Benefits />
