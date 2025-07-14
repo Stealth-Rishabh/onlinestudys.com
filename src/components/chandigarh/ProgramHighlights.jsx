@@ -20,7 +20,7 @@ export default function ProgramHighlights() {
       title: "Industry Focused Curriculum",
       description:
         "Real-world focused curriculum designed by industry experts for practical learning",
-      image: "/banners/mba.jpg",
+      image: "/industry-curriculum.jpg",
       gradient: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
       textColor: "text-indigo-900",
@@ -30,7 +30,7 @@ export default function ProgramHighlights() {
       title: "Live Interactive Classes",
       description:
         "Real-time live classes with faculty interaction and peer-to-peer learning",
-      image: "/banners/mba.webp",
+      image: "/live.webp",
       gradient: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50",
       textColor: "text-purple-900",
@@ -40,7 +40,7 @@ export default function ProgramHighlights() {
       title: "Flexible Learning",
       description:
         "Study at your own pace with recorded sessions and flexible scheduling",
-      image: "/banners/mba.png",
+      image: "/flexible.webp",
       gradient: "from-cyan-500 to-blue-600",
       bgColor: "bg-cyan-50",
       textColor: "text-cyan-900",
@@ -83,12 +83,12 @@ export default function ProgramHighlights() {
               }}
             >
               {/* Image Container */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={highlight.image}
                   alt={highlight.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover aspect-square group-hover:scale-110 transition-transform duration-700"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-t ${highlight.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}

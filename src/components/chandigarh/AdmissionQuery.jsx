@@ -39,7 +39,7 @@ const formFields = [
   {
     name: "coursesid",
     type: "hidden",
-    value: "CHANDIGARH_MBA_2024",
+    value: "OGLAMBA201",
   },
   {
     name: "state",
@@ -67,7 +67,7 @@ const initialFormData = {
   name: "",
   email: "",
   phone: "",
-  coursesid: "CHANDIGARH_MBA_2024",
+  coursesid: "OGLAMBA201",
   state: "",
   city: "",
 };
