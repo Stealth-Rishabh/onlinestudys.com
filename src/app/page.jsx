@@ -8,6 +8,7 @@ import Universities from "@/components/home/Universities";
 import Benefits from "@/components/home/Benefits";
 import FAQ from "@/components/home/FAQ";
 import AdmissionQuery from "@/components/home/AdmissionQuery";
+import Banner from "@/components/home/Banner";
 
 function LandingPageContent() {
   const searchParams = useSearchParams();
@@ -30,7 +31,8 @@ function LandingPageContent() {
   return (
     <>
       <AdmissionQuery utmParams={utmParams} />
-      <HeroSection />
+      {/* <HeroSection /> */}
+      <Banner />
       <Universities />
       <WhoShouldEnroll />
       <Benefits />

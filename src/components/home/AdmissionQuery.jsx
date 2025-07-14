@@ -229,7 +229,7 @@ export default function AdmissionQuery({ utmParams }) {
       <AnimatePresence>
         {!isAdmissionFormOpen && (
           <motion.button
-            className="fixed right-[8px] top-1/3 -translate-y-1/2 bg-gradient-to-r from-green-700 to-green-400 text-white px-8 py-4 -rotate-90 origin-right z-50 hover:shadow-lg transition-all duration-300 rounded-t-lg font-medium tracking-wide"
+            className="fixed right-[8px] top-1/3 -translate-y-1/2 bg-gradient-to-r from-green-700 to-green-400 text-white px-8 py-4 -rotate-90 origin-right z-50 hover:shadow-lg transition-all duration-300 rounded-t-lg font-medium tracking-wide hidden"
             style={{ transformOrigin: "calc(100% - 8px) 50%" }}
             onClick={openAdmissionForm}
             initial={{ x: 0 }}
