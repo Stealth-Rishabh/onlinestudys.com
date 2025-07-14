@@ -11,6 +11,7 @@ import Hallmarks from "@/components/chandigarh/Hallmarks";
 import Benefits from "@/components/chandigarh/Benefits";
 import FAQ from "@/components/chandigarh/FAQ";
 import AdmissionQuery from "@/components/chandigarh/AdmissionQuery";
+import EnquireNowButton from "@/components/ui/EnquireNowButton";
 
 function ChandigarhPageContent() {
   const searchParams = useSearchParams();
@@ -40,6 +41,7 @@ function ChandigarhPageContent() {
       <WhoShouldEnroll />
       <Benefits />
       <FAQ />
+      <EnquireNowButton />
     </>
   );
 }

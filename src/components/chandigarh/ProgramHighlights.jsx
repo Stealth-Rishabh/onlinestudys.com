@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useAdmissionForm } from "@/context/AdmissionFormContext";
+import EnquireNowButton from "@/components/ui/EnquireNowButton";
+import { MessageCircle } from "lucide-react";
 
 export default function ProgramHighlights() {
   const { openAdmissionForm } = useAdmissionForm();
