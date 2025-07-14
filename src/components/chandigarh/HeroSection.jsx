@@ -265,7 +265,7 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 lg:gap-3 text-sm sm:text-base lg:text-xl xl:text-2xl text-gray-200">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 lg:gap-3 text-sm sm:text-base lg:text-xl text-gray-200">
                 <Award className="w-4 h-4 lg:w-6 lg:h-6 text-blue-400 flex-shrink-0" />
                 <span className="text-center lg:text-left">
                   Top 50 in India for Innovation • Chandigarh University Online
