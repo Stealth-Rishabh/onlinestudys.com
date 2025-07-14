@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -175,7 +177,7 @@ export default function Universities() {
         "UGC‑entitled & NAAC A+ accredited",
         "100% online with optional campus immersion",
         "Global recognition & networking",
-        "Flexible learning with campus access options",
+        "100% online with optional campus immersion",
       ],
     },
   ];
@@ -254,26 +256,37 @@ export default function Universities() {
               <AccordionItem key={university.id} value={`item-${index}`}>
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4">
-                    <Image
-                      src={university.logo}
-                      alt={`${university.name} logo`}
-                      width={100}
-                      height={40}
-                      className="object-contain"
-                    />
+                    <div className="w-24 h-12 rounded-lg bg-black flex items-center justify-center">
+                      <Image
+                        src={university.logo || "/placeholder.svg"}
+                        alt={`${university.name} logo`}
+                        width={96}
+                        height={48}
+                        className="w-full h-8 object-contain"
+                      />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-lg font-bold text-gray-900">
+                        {university.name}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        Total Fee - {university.fee}
+                      </p>
+                    </div>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-4 pt-4">
-                    <h4 className="font-semibold text-gray-900 text-[13px] uppercase tracking-wide">
+                    <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
                       Join {university.name.split(" ")[0]} — Here's Why.
                     </h4>
                     <div className="space-y-2">
                       {university.description.map((desc, i) => (
-                        <div key={i} className="flex items-start text-[10px] font-light gap-3">
-                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
-                            <CheckCheck className="w-3 h-3 text-green-600" />
-                          </div>
+                        <div
+                          key={i}
+                          className="flex items-start text-sm gap-2 text-gray-600"
+                        >
+                          <CheckCheck className="min-w-4 w-4 h-4 mt-[3px] text-green-500" />
                           {desc}
                         </div>
                       ))}
@@ -303,10 +316,10 @@ export default function Universities() {
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full h-20 rounded-xl bg-black flex items-center justify-center shadow-md">
                         <Image
-                          src={university.logo}
+                          src={university.logo || "/placeholder.svg"}
                           alt={`${university.name} logo`}
-                          width={120}
-                          height={40}
+                          width={280}
+                          height={80}
                           className="w-full h-14 object-contain px-5"
                         />
                       </div>
@@ -323,10 +336,11 @@ export default function Universities() {
                     </h4>
                     <div className="space-y-1 mb-4">
                       {university.description.map((desc, i) => (
-                        <div key={i} className="flex items-start text-sm gap-3">
-                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
-                            <CheckCheck className="w-3 h-3 text-green-600" />
-                          </div>
+                        <div
+                          key={i}
+                          className="flex items-start text-xs gap-2 text-gray-600"
+                        >
+                          <CheckCheck className="min-w-4 w-4 h-4 mt-[3px] text-green-500" />
                           {desc}
                         </div>
                       ))}
