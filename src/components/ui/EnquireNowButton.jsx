@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,8 +12,22 @@ export default function EnquireNowButton({
   link = "#enquire",
   backgroundColor = "bg-red-600",
   className = "",
+  scrollOffset = 600, // px to show after
   ...props
 }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > scrollOffset);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollOffset]);
+
+  if (!isVisible) return null;
+
   const content = (
     <span className="flex items-center justify-center">
       {icon}
