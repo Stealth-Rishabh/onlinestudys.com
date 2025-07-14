@@ -236,7 +236,7 @@ export default function HeroSection() {
     <section
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/banners/graduation-cap.jpg')",
+        backgroundImage: "url('/banners/galgotias2.webp')",
       }}
     >
       {/* Enhanced Background Overlay */}
