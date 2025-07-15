@@ -71,6 +71,7 @@ const initialFormData = {
   coursesid: "GALGOTIAS_ONLINE_MBA",
   state: "",
   city: "",
+  page: "galgotias",
 };
 
 export default function HeroSection() {
@@ -153,6 +154,7 @@ export default function HeroSection() {
       const sanitizedFormData = {
         ...formData,
         city: formData.city.replace(/\s/g, ""),
+        page: "galgotias",
       };
       // Submit to CRM
       const crmResult = await submitAdmissionQuery(
@@ -162,7 +164,7 @@ export default function HeroSection() {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
+        "https://www.nocolleges.com/pages.php",
         {
           method: "POST",
           headers: {

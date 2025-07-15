@@ -69,6 +69,7 @@ const initialFormData = {
   coursesid: "OGLAMBA201",
   state: "",
   city: "",
+  page: "chandigarh",
 };
 
 export default function HeroSection() {
@@ -150,6 +151,7 @@ export default function HeroSection() {
       const sanitizedFormData = {
         ...formData,
         city: formData.city.replace(/\s/g, ""),
+        page: "chandigarh",
       };
       // Submit to CRM
       const crmResult = await submitAdmissionQuery(
@@ -159,7 +161,7 @@ export default function HeroSection() {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
+        "https://www.nocolleges.com/pages.php",
         {
           method: "POST",
           headers: {
@@ -167,8 +169,9 @@ export default function HeroSection() {
           },
           body: JSON.stringify({
             ...sanitizedFormData,
+            page: "chandigarh", // <-- ensure this is always present
             campaign: utmParams?.campaign || utmParams?.utm_campaign,
-            utm_source: "Stealth",
+            utm_source: utmParams?.utm_source || "Stealth",
             utm_medium: utmParams?.utm_medium,
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,

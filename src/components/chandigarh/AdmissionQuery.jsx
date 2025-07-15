@@ -70,6 +70,7 @@ const initialFormData = {
   coursesid: "OGLAMBA201",
   state: "",
   city: "",
+  page: "chandigarh",
 };
 
 export default function AdmissionQuery({ utmParams }) {
@@ -146,6 +147,7 @@ export default function AdmissionQuery({ utmParams }) {
       const sanitizedFormData = {
         ...formData,
         city: formData.city.replace(/\s/g, ""),
+        page: "chandigarh",
       };
       // Submit to CRM
       const crmResult = await submitAdmissionQuery(
@@ -155,7 +157,7 @@ export default function AdmissionQuery({ utmParams }) {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
+        "https://www.nocolleges.com/pages.php",
         {
           method: "POST",
           headers: {
@@ -163,8 +165,9 @@ export default function AdmissionQuery({ utmParams }) {
           },
           body: JSON.stringify({
             ...sanitizedFormData,
+            page: "chandigarh", // ensure always present
             campaign: utmParams?.campaign || utmParams?.utm_campaign,
-            utm_source: "Stealth",
+            utm_source: utmParams?.utm_source || "Stealth",
             utm_medium: utmParams?.utm_medium,
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,

@@ -70,6 +70,7 @@ const initialFormData = {
   coursesid: "OGLAMBA201",
   state: "",
   city: "",
+  page: "parul",
 };
 
 export default function AdmissionQuery({ utmParams }) {
@@ -146,6 +147,7 @@ export default function AdmissionQuery({ utmParams }) {
       const sanitizedFormData = {
         ...formData,
         city: formData.city.replace(/\s/g, ""),
+        page: "parul",
       };
       // Submit to CRM
       const crmResult = await submitAdmissionQuery(
@@ -155,7 +157,7 @@ export default function AdmissionQuery({ utmParams }) {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
+        "https://www.nocolleges.com/pages.php",
         {
           method: "POST",
           headers: {

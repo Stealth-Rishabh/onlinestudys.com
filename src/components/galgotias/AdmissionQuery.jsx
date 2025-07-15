@@ -70,6 +70,7 @@ const initialFormData = {
   coursesid: "GALGOTIAS_ONLINE_MBA",
   state: "",
   city: "",
+  page: "galgotias",
 };
 
 export default function AdmissionQuery({ utmParams }) {
@@ -143,13 +144,14 @@ export default function AdmissionQuery({ utmParams }) {
       const sanitizedFormData = {
         ...formData,
         city: formData.city.replace(/\s/g, ""),
+        page: "galgotias",
       };
       const crmResult = await submitAdmissionQuery(
         sanitizedFormData,
         utmParams
       );
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
+        "https://www.nocolleges.com/pages.php",
         {
           method: "POST",
           headers: {
