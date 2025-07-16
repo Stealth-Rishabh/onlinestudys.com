@@ -339,7 +339,7 @@ export default function HeroSection() {
                           } rounded-lg lg:rounded-xl text-white text-sm lg:text-base focus:outline-none focus:ring-1 focus:ring-orange-400/50 focus:border-orange-400/50 transition-all duration-300`}
                           required={field.required}
                         >
-                          <option value="" className="bg-gray-800 text-white">
+                          <option value="" className="bg-white text-gray-800">
                             {field.placeholder}
                           </option>
                           {field.name === "city" && cities.length > 0
@@ -347,7 +347,7 @@ export default function HeroSection() {
                                 <option
                                   key={city}
                                   value={city}
-                                  className="bg-gray-800 text-white"
+                                  className="bg-white text-gray-800"
                                 >
                                   {city}
                                 </option>
@@ -364,7 +364,7 @@ export default function HeroSection() {
                                       ? option.value
                                       : option
                                   }
-                                  className="bg-gray-800 text-white"
+                                  className="bg-white text-gray-800"
                                 >
                                   {typeof option === "object"
                                     ? option.label

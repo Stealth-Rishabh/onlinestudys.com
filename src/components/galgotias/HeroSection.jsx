@@ -252,9 +252,9 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-6 lg:py-0 lg:min-h-[calc(100vh-72px)] lg:flex lg:items-center">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center w-full">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-12 items-center w-full">
           {/* Left Side: Content */}
-          <div className="text-white lg:w-3/5 space-y-6 text-center lg:text-left">
+          <div className="text-white lg:w-3/5 space-y-4 sm:space-y-6 text-center lg:text-left">
             <div className="inline-block bg-white/10 p-2 rounded-full">
               <div className="flex items-center gap-2 text-sm px-2">
                 <Image
@@ -268,17 +268,17 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               Advance Your Career with India’s Best UGC-Entitled Online MBA
               Program
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
               Our industry-focused curriculum, taught by leading faculty,
               prepares you for success by focusing on core business principles
               and fostering an entrepreneurial mindset.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
+            <div className="hidden sm:flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
               <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
                 <Award className="w-5 h-5 text-yellow-400" />
                 <span>NAAC A+ Accredited</span>
@@ -322,14 +322,21 @@ export default function HeroSection() {
                               ? "border-red-500"
                               : "border-transparent"
                           } focus:ring-2 focus:ring-blue-500 focus:outline-none transition`}
+                          // style={{
+                          //   backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")`,
+                          //   backgroundRepeat: 'no-repeat',
+                          //   backgroundPosition: 'right 0.7rem center',
+                          //   backgroundSize: '12px',
+                          // }}
                           required={field.required}
                         >
-                          <option value="">{field.placeholder}</option>
+                          <option value="" className="text-gray-800 bg-white">{field.placeholder}</option>
                           {(field.name === "city" ? cities : field.options).map(
                             (option, index) => (
                               <option
                                 key={index}
                                 value={option.value || option}
+                                className="text-gray-800 bg-white"
                               >
                                 {option.label || option}
                               </option>

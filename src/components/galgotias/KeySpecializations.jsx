@@ -169,7 +169,7 @@ function SpecializationCard({ spec, index, isActive, onClick }) {
       onClick={onClick}
     >
       <div
-        className={`relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border rounded-3xl p-6 h-48 transition-all duration-500 overflow-hidden ${
+        className={`relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border rounded-3xl p-6 h-auto transition-all duration-500 overflow-hidden ${
           isActive
             ? "border-white/40 shadow-2xl shadow-blue-500/20"
             : "border-white/20 hover:border-white/30 hover:from-white/15 hover:to-white/10"

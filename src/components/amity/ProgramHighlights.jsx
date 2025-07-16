@@ -40,7 +40,7 @@ export default function ProgramHighlights() {
       title: "Real World Projects",
       description:
         "Real world projects and case studies to help you succeed in your industry",
-      image: "/banners/mba.png",
+      image: "/real-world-projects.avif",
       gradient: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50",
       textColor: "text-purple-900",

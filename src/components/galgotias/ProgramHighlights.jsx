@@ -40,7 +40,7 @@ export default function ProgramHighlights() {
       title: "Enhanced Employability",
       description:
         "Ensuring career progression through industry partnerships and cutting-edge technology.",
-      image: "/banners/mba.png",
+      image: "/enhanced-employability.avif",
       gradient: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50",
       textColor: "text-purple-900",
@@ -66,7 +66,7 @@ export default function ProgramHighlights() {
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover our Online MBA degree program and begin an exciting
             educational journey with Galgotias.
           </p>
