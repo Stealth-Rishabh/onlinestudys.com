@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import HeroSection from "@/components/mca/HeroSection";
 import WhoShouldEnroll from "@/components/mca/WhoShouldEnroll";
@@ -39,9 +39,5 @@ function McaPageContent() {
 }
 
 export default function McaPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <McaPageContent />
-    </Suspense>
-  );
-} 
+  return <McaPageContent />;
+}

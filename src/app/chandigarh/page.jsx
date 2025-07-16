@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import HeroSection from "@/components/chandigarh/HeroSection";
 import Stats from "@/components/chandigarh/Stats";
@@ -47,9 +47,5 @@ function ChandigarhPageContent() {
 }
 
 export default function ChandigarhPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ChandigarhPageContent />
-    </Suspense>
-  );
-} 
+  return <ChandigarhPageContent />;
+}

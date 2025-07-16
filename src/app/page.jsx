@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import HeroSection from "@/components/home/HeroSection";
+// import HeroSection from "@/components/home/HeroSection";
 import WhoShouldEnroll from "@/components/home/WhoShouldEnroll";
 import Universities from "@/components/home/Universities";
 import Benefits from "@/components/home/Benefits";
@@ -44,9 +44,5 @@ function LandingPageContent() {
 }
 
 export default function LandingPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <LandingPageContent />
-    </Suspense>
-  );
+  return <LandingPageContent />;
 }

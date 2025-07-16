@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import HeroSection from "@/components/amity/HeroSection";
 import Stats from "@/components/amity/Stats";
@@ -45,9 +45,5 @@ function AmityPageContent() {
 }
 
 export default function AmityPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AmityPageContent />
-    </Suspense>
-  );
+  return <AmityPageContent />;
 }
