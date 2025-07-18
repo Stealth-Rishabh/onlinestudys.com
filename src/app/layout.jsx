@@ -22,6 +22,22 @@ export default function RootLayout({ children }) {
           content="QNe5bEKwiwWRpzNKSe5xB8UZb_eK1LfLDiwODLE3aEk"
         />
 
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-FM76F125F8"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FM76F125F8');
+            `,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
