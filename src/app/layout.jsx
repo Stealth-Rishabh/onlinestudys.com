@@ -7,9 +7,9 @@ import { AdmissionFormProvider } from "@/context/AdmissionFormContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Online MBA & MCA Programs | GLA Online",
+  title: "Online MBA from Top Universities - Nocolleges",
   description:
-    "Explore the best online MBA & MCA programs with GLA Online. Get detailed information on admission, courses, and universities.",
+    "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
 };
 
 export default function RootLayout({ children }) {
