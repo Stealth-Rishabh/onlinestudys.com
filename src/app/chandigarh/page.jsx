@@ -11,6 +11,7 @@ import Benefits from "@/components/chandigarh/Benefits";
 import FAQ from "@/components/chandigarh/FAQ";
 import AdmissionQuery from "@/components/chandigarh/AdmissionQuery";
 import EnquireNowButton from "@/components/ui/EnquireNowButton";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function ChandigarhPage() {
   const [utmParams, setUtmParams] = useState({});
@@ -35,6 +36,7 @@ export default function ChandigarhPage() {
   return (
     <main className="min-h-screen bg-white">
       <AdmissionQuery utmParams={utmParams} />
+      <AutoPopup />
       <HeroSection />
       <Stats />
       <ProgramHighlights />

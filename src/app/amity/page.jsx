@@ -10,6 +10,7 @@ import Hallmarks from "@/components/amity/Hallmarks";
 import Benefits from "@/components/amity/Benefits";
 import FAQ from "@/components/amity/FAQ";
 import AdmissionQuery from "@/components/amity/AdmissionQuery";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function AmityPage() {
   const [utmParams, setUtmParams] = useState({});
@@ -34,6 +35,7 @@ export default function AmityPage() {
   return (
     <main className="min-h-screen bg-white">
       <AdmissionQuery utmParams={utmParams} />
+      <AutoPopup />
       <HeroSection />
       <Stats />
       <ProgramHighlights />

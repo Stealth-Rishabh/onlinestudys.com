@@ -9,6 +9,7 @@ import FAQ from "@/components/galgotias/FAQ";
 import Hallmarks from "@/components/galgotias/Hallmarks";
 import AdmissionQuery from "@/components/galgotias/AdmissionQuery";
 import Curriculum from "@/components/galgotias/Curriculum";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function GalgotiasPage() {
   return (
@@ -22,6 +23,7 @@ export default function GalgotiasPage() {
       <Benefits />
       <FAQ />
       <AdmissionQuery />
+      <AutoPopup />
     </main>
   );
 }

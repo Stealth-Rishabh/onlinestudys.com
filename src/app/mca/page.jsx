@@ -7,6 +7,7 @@ import Universities from "@/components/mca/Universities";
 import Benefits from "@/components/mca/Benefits";
 import FAQ from "@/components/mca/FAQ";
 import AdmissionQuery from "@/components/mca/AdmissionQuery";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function McaPage() {
   const [utmParams, setUtmParams] = useState({});
@@ -31,6 +32,7 @@ export default function McaPage() {
   return (
     <main className="min-h-screen bg-white">
       <AdmissionQuery utmParams={utmParams} />
+      <AutoPopup />
       <HeroSection />
       <Universities />
       <WhoShouldEnroll />

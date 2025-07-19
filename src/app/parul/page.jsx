@@ -9,6 +9,7 @@ import FAQ from "@/components/parul/FAQ";
 import FloatingAdmissionButton from "@/components/parul/FloatingAdmissionButton";
 import Hallmarks from "@/components/parul/Hallmarks";
 import AdmissionQuery from "@/components/parul/AdmissionQuery";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function ParulPage() {
   return (
@@ -21,6 +22,7 @@ export default function ParulPage() {
       <Benefits />
       <FAQ />
       <AdmissionQuery />
+      <AutoPopup />
     </main>
   );
 }

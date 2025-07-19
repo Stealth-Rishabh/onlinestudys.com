@@ -9,6 +9,7 @@ import FAQ from "@/components/home/FAQ";
 import AdmissionQuery from "@/components/home/AdmissionQuery";
 import Banner from "@/components/home/Banner";
 import { AccreditationLogoMobile } from "@/components/ui/AccreditationLogoMobile";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function LandingPage() {
   const [utmParams, setUtmParams] = useState({});
@@ -34,6 +35,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       <AdmissionQuery utmParams={utmParams} />
+      <AutoPopup />
       {/* <HeroSection /> */}
       <Banner />
       <AccreditationLogoMobile />
