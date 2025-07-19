@@ -10,6 +10,26 @@ export const metadata = {
   title: "Online MBA from Top Universities - Nocolleges",
   description:
     "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
+  keywords:
+    "online MBA, distance learning MBA, MBA programs India, online MBA courses, MBA degree online, top MBA universities",
+  openGraph: {
+    title: "Online MBA from Top Universities - Nocolleges",
+    description:
+      "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
+    type: "website",
+    url: "https://nocolleges.com",
+    siteName: "Nocolleges",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Online MBA from Top Universities - Nocolleges",
+    description:
+      "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
