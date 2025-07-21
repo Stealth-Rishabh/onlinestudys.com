@@ -149,16 +149,16 @@ export default function AdmissionQuery({ utmParams }) {
         city: formData.city.replace(/\s/g, ""),
         page: "amity",
       };
-      // Submit to CRM
+      // Submit to CRM first
       const crmResult = await submitAdmissionQuery(
         sanitizedFormData,
         utmParams
       );
 
-      // Submit to Google Sheets
-      const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/submit.php",
-        {
+      // Try to submit to Google Sheets (optional)
+      let sheetsData = { success: false };
+      try {
+        const sheetsResponse = await fetch("/submit.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -171,10 +171,17 @@ export default function AdmissionQuery({ utmParams }) {
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,
           }),
-        }
-      );
+        });
 
-      const sheetsData = await sheetsResponse.json();
+        if (sheetsResponse.ok) {
+          sheetsData = await sheetsResponse.json();
+        }
+      } catch (error) {
+        console.log(
+          "Google Sheets submission failed, but CRM succeeded:",
+          error
+        );
+      }
 
       // Handle success case
       if (crmResult.success || sheetsData.success) {

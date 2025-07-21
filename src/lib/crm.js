@@ -25,7 +25,7 @@ export const submitAdmissionQuery = async (formData, utmParams = {}) => {
     if (
       response &&
       typeof response === "string" &&
-      response.startsWith("1@@")
+      (response.startsWith("1@@") || response.includes("successful"))
     ) {
       return {
         success: true,

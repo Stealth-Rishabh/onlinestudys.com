@@ -41,42 +41,42 @@ export default function AutoPopup() {
         return {
           courseId: "OGLAMCA201",
           pageName: "mca",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MCA",
         };
       case "/amity":
         return {
           courseId: "OGLAMBA201",
           pageName: "amity",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MBA from Amity",
         };
       case "/parul":
         return {
           courseId: "OGLAMBA201",
           pageName: "parul",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MBA from Parul",
         };
       case "/galgotias":
         return {
           courseId: "OGLAMBA201",
           pageName: "galgotias",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MBA from Galgotias",
         };
       case "/chandigarh":
         return {
           courseId: "OGLAMBA201",
           pageName: "chandigarh",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MBA from Chandigarh",
         };
       default:
         return {
           courseId: "OGLAMBA201",
           pageName: "home",
-          endpoint: "https://www.nocolleges.com/submit.php",
+          endpoint: "/submit.php",
           title: "Apply for Online MBA",
         };
     }

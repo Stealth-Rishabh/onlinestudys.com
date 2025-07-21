@@ -156,19 +156,32 @@ export default function AdmissionQuery({ utmParams }) {
         utm_content: utmParams?.utm_content,
       };
 
-      // Run both submissions in parallel
-      const [crmResult, sheetsResponse] = await Promise.all([
-        submitAdmissionQuery(sanitizedFormData, utmParams),
-        fetch("https://www.nocolleges.com/submit.php", {
+      // Submit to CRM first
+      const crmResult = await submitAdmissionQuery(
+        sanitizedFormData,
+        utmParams
+      );
+
+      // Try to submit to Google Sheets (optional)
+      let sheetsData = { success: false };
+      try {
+        const sheetsResponse = await fetch("/submit.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(dataForSheet),
-        }),
-      ]);
+        });
 
-      const sheetsData = await sheetsResponse.json();
+        if (sheetsResponse.ok) {
+          sheetsData = await sheetsResponse.json();
+        }
+      } catch (error) {
+        console.log(
+          "Google Sheets submission failed, but CRM succeeded:",
+          error
+        );
+      }
 
       // Handle success case
       if (crmResult.success || sheetsData.success) {
