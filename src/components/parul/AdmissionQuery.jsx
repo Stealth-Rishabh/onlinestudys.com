@@ -158,20 +158,23 @@ export default function AdmissionQuery({ utmParams }) {
       // Try to submit to Google Sheets (optional)
       let sheetsData = { success: false };
       try {
-        const sheetsResponse = await fetch("/submit.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...sanitizedFormData,
-            campaign: utmParams?.campaign || utmParams?.utm_campaign,
-            utm_source: "Stealth",
-            utm_medium: utmParams?.utm_medium,
-            utm_term: utmParams?.utm_term,
-            utm_content: utmParams?.utm_content,
-          }),
-        });
+        const sheetsResponse = await fetch(
+          "https://nocolleges.com/submit.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...sanitizedFormData,
+              campaign: utmParams?.campaign || utmParams?.utm_campaign,
+              utm_source: "Stealth",
+              utm_medium: utmParams?.utm_medium,
+              utm_term: utmParams?.utm_term,
+              utm_content: utmParams?.utm_content,
+            }),
+          }
+        );
 
         if (sheetsResponse.ok) {
           sheetsData = await sheetsResponse.json();

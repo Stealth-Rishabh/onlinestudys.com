@@ -165,13 +165,16 @@ export default function AdmissionQuery({ utmParams }) {
       // Try to submit to Google Sheets (optional)
       let sheetsData = { success: false };
       try {
-        const sheetsResponse = await fetch("/submit.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataForSheet),
-        });
+        const sheetsResponse = await fetch(
+          "https://nocolleges.com/submit.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataForSheet),
+          }
+        );
 
         if (sheetsResponse.ok) {
           sheetsData = await sheetsResponse.json();
