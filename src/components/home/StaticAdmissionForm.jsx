@@ -147,7 +147,7 @@ export default function StaticAdmissionForm({ utmParams }) {
 
       const [crmResult, sheetsResponse] = await Promise.all([
         submitAdmissionQuery(formData, utmParams),
-        fetch("/submit.php", {
+        fetch("https://www.nocolleges.com/submit.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
