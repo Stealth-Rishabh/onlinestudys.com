@@ -150,7 +150,7 @@ export default function AdmissionQuery({ utmParams }) {
         sanitizedFormData,
         utmParams
       );
-      const sheetsResponse = await fetch("https://nocolleges.com/submit.php", {
+      const sheetsResponse = await fetch("/api/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
