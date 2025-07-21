@@ -164,7 +164,7 @@ export default function HeroSection() {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/pages.php",
+        "https://www.nocolleges.com/submit.php",
         {
           method: "POST",
           headers: {
@@ -330,7 +330,9 @@ export default function HeroSection() {
                           // }}
                           required={field.required}
                         >
-                          <option value="" className="text-gray-800 bg-white">{field.placeholder}</option>
+                          <option value="" className="text-gray-800 bg-white">
+                            {field.placeholder}
+                          </option>
                           {(field.name === "city" ? cities : field.options).map(
                             (option, index) => (
                               <option

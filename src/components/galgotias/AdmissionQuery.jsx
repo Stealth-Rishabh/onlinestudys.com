@@ -151,7 +151,7 @@ export default function AdmissionQuery({ utmParams }) {
         utmParams
       );
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/pages.php",
+        "https://www.nocolleges.com/submit.php",
         {
           method: "POST",
           headers: {

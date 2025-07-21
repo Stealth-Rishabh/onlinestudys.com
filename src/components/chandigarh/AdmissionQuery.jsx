@@ -157,7 +157,7 @@ export default function AdmissionQuery({ utmParams }) {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/pages.php",
+        "https://www.nocolleges.com/submit.php",
         {
           method: "POST",
           headers: {
@@ -267,9 +267,12 @@ export default function AdmissionQuery({ utmParams }) {
               >
                 <X className="w-6 h-6" />
               </button>
-              <h2 className="text-2xl font-bold text-blue-700 mb-2">Get Free Admission Counseling</h2>
+              <h2 className="text-2xl font-bold text-blue-700 mb-2">
+                Get Free Admission Counseling
+              </h2>
               <p className="text-gray-600 mb-6">
-                Speak with our experts and get personalized guidance for Chandigarh University's Online MBA.
+                Speak with our experts and get personalized guidance for
+                Chandigarh University's Online MBA.
               </p>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 {formFields.map((field) =>
@@ -287,7 +290,10 @@ export default function AdmissionQuery({ utmParams }) {
                           } rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300`}
                           required={field.required}
                         >
-                          <option value="" className="bg-gray-100 text-gray-900">
+                          <option
+                            value=""
+                            className="bg-gray-100 text-gray-900"
+                          >
                             {field.placeholder}
                           </option>
                           {field.name === "city" && cities.length > 0
@@ -363,4 +369,4 @@ export default function AdmissionQuery({ utmParams }) {
       </AnimatePresence>
     </>
   );
-} 
+}

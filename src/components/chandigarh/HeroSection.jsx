@@ -161,7 +161,7 @@ export default function HeroSection() {
 
       // Submit to Google Sheets
       const sheetsResponse = await fetch(
-        "https://www.nocolleges.com/pages.php",
+        "https://www.nocolleges.com/submit.php",
         {
           method: "POST",
           headers: {
@@ -417,4 +417,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-} 
+}
