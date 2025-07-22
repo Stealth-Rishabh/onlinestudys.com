@@ -317,12 +317,6 @@ export default function HeroSection() {
                               ? "border-red-500"
                               : "border-transparent"
                           } focus:ring-2 focus:ring-blue-500 focus:outline-none transition`}
-                          // style={{
-                          //   backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")`,
-                          //   backgroundRepeat: 'no-repeat',
-                          //   backgroundPosition: 'right 0.7rem center',
-                          //   backgroundSize: '12px',
-                          // }}
                           required={field.required}
                         >
                           <option value="" className="text-gray-800 bg-white">
