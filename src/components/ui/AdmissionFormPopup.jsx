@@ -149,27 +149,24 @@ export default function AdmissionFormPopup({
         ...(pageName !== "mca" && { page: pageName }), // Only add page field for non-MCA forms
       };
 
-      // Submit to CRM
-      const crmResult = await submitAdmissionQuery(
-        sanitizedFormData,
-        utmParams
-      );
-
-      // Submit to Google Sheets
-      const sheetsResponse = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...sanitizedFormData,
-          campaign: utmParams?.campaign || utmParams?.utm_campaign,
-          utm_source: "Stealth",
-          utm_medium: utmParams?.utm_medium,
-          utm_term: utmParams?.utm_term,
-          utm_content: utmParams?.utm_content,
+      // PARALLEL API CALLS for faster submission
+      const [crmResult, sheetsResponse] = await Promise.all([
+        submitAdmissionQuery(sanitizedFormData, utmParams),
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...sanitizedFormData,
+            campaign: utmParams?.campaign || utmParams?.utm_campaign,
+            utm_source: "Stealth",
+            utm_medium: utmParams?.utm_medium,
+            utm_term: utmParams?.utm_term,
+            utm_content: utmParams?.utm_content,
+          }),
         }),
-      });
+      ]);
 
       const sheetsData = await sheetsResponse.json();
 
@@ -185,9 +182,12 @@ export default function AdmissionFormPopup({
         }
         setFormData(initialFormData);
         setErrors({});
+
+        // Consistent redirect behavior
         if (onSuccess) {
           onSuccess();
         } else {
+          // Immediate redirect for popup forms
           window.location.href = "/thankyou.html";
         }
       } else {

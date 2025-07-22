@@ -149,16 +149,11 @@ export default function AdmissionQuery({ utmParams }) {
         city: formData.city.replace(/\s/g, ""),
         page: "amity",
       };
-      // Submit to CRM first
-      const crmResult = await submitAdmissionQuery(
-        sanitizedFormData,
-        utmParams
-      );
 
-      // Try to submit to Google Sheets (optional)
-      let sheetsData = { success: false };
-      try {
-        const sheetsResponse = await fetch("/api/submit", {
+      // PARALLEL API CALLS for faster submission
+      const [crmResult, sheetsResponse] = await Promise.all([
+        submitAdmissionQuery(sanitizedFormData, utmParams),
+        fetch("/api/submit", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -171,17 +166,10 @@ export default function AdmissionQuery({ utmParams }) {
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,
           }),
-        });
+        }),
+      ]);
 
-        if (sheetsResponse.ok) {
-          sheetsData = await sheetsResponse.json();
-        }
-      } catch (error) {
-        console.log(
-          "Google Sheets submission failed, but CRM succeeded:",
-          error
-        );
-      }
+      const sheetsData = await sheetsResponse.json();
 
       // Handle success case
       if (crmResult.success || sheetsData.success) {
