@@ -7,7 +7,7 @@ import { AdmissionFormProvider } from "@/context/AdmissionFormContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Online MBA from Top Universities - Online Studys",
+  title: "Online MBA from Top Universities | Admissions Open for Online MBA",
   description:
     "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
   keywords:
