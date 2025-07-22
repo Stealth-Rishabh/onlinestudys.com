@@ -400,7 +400,9 @@ export default function HeroSection() {
                   className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2.5 lg:px-6 lg:py-4 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group disabled:opacity-70"
                 >
                   <span>
-                    {isSubmitting ? "Submitting..." : "Get Free Counseling"}
+                    {isSubmitting
+                      ? "⌛Please wait ! Form is Submitting..."
+                      : "Get Free Counseling"}
                   </span>
                   <Send className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>

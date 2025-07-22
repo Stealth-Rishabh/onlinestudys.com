@@ -284,7 +284,9 @@ export default function StaticAdmissionForm({ utmParams }) {
           disabled={isSubmitting}
           className="w-full p-3 bg-gradient-to-r from-green-700 to-green-400 text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm font-medium mt-2 flex items-center justify-center gap-2 group disabled:opacity-70"
         >
-          {isSubmitting ? "Submitting..." : "Submit Query"}
+          {isSubmitting
+            ? "⌛Please wait ! Form is Submitting..."
+            : "Submit Query"}
           <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </form>

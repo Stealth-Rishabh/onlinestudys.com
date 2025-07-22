@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useAdmissionForm } from "@/context/AdmissionFormContext";
-import { Star, Award, Play, ArrowRight, Send } from "lucide-react";
+import { Star, Award, Send, Loader2 } from "lucide-react";
 import { submitAdmissionQuery } from "@/lib/crm";
 import { toast } from "sonner";
 import { getAllStates, getCitiesForState } from "@/lib/stateData";
@@ -405,9 +405,11 @@ export default function HeroSection() {
                   className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2.5 lg:px-6 lg:py-4 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group disabled:opacity-70"
                 >
                   <span>
-                    {isSubmitting ? "Submitting..." : "Get Free Counseling"}
+                    {isSubmitting
+                      ? "⌛Please wait ! Form is Submitting..."
+                      : "Get Free Counseling"}
                   </span>
-                  <Send className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                 {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                 </button>
               </form>
 

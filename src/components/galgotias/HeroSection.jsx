@@ -376,7 +376,7 @@ export default function HeroSection() {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      <span>Submitting...</span>
+                      <span>⌛Please wait ! Form is Submitting...</span>
                     </>
                   ) : (
                     <>
