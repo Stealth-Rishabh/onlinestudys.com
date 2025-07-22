@@ -9,7 +9,7 @@ const Header = () => {
         {/* Logo */}
         <Image
           src="/logo.png"
-          alt="NoCollege Logo"
+          alt="Online Studys Logo"
           width={150}
           height={64}
           className="h-16 w-auto drop-shadow-"

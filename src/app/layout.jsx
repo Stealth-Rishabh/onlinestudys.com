@@ -7,22 +7,22 @@ import { AdmissionFormProvider } from "@/context/AdmissionFormContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Online MBA from Top Universities - Nocolleges",
+  title: "Online MBA from Top Universities - Online Studys",
   description:
     "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
   keywords:
     "online MBA, distance learning MBA, MBA programs India, online MBA courses, MBA degree online, top MBA universities",
   openGraph: {
-    title: "Online MBA from Top Universities - Nocolleges",
+    title: "Online MBA from Top Universities - Online Studys",
     description:
       "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
     type: "website",
-    url: "https://nocolleges.com",
-    siteName: "Nocolleges",
+    url: "https://onlinestudys.com",
+    siteName: "Online Studys",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online MBA from Top Universities - Nocolleges",
+    title: "Online MBA from Top Universities - Online Studys",
     description:
       "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
   },
@@ -61,13 +61,13 @@ export default function RootLayout({ children }) {
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KV63Z6PD');`,
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-WKXVNGZM');
+            `,
           }}
         />
         {/* End Google Tag Manager */}
@@ -76,10 +76,10 @@ export default function RootLayout({ children }) {
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KV63Z6PD"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WKXVNGZM"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style="display:none;visibility:hidden"
           ></iframe>
         </noscript>
 

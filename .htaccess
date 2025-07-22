@@ -1,11 +1,11 @@
-# Force HTTP to HTTPS, non-www to www, and all variations to https://www.nocolleges.com
+# Force HTTP to HTTPS, non-www to www, and all variations to https://www.onlinestudys.com
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Redirect all HTTP and non-www requests to https://www.nocolleges.com
+  # Redirect all HTTP and non-www requests to https://www.onlinestudys.com
   RewriteCond %{HTTP_HOST} !^www\. [NC,OR]
   RewriteCond %{HTTPS} !on [NC]
-  RewriteRule ^ https://www.nocolleges.com%{REQUEST_URI} [L,R=301,NE]
+  RewriteRule ^ https://www.onlinestudys.com%{REQUEST_URI} [L,R=301,NE]
 
   # Serve existing files/directories directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -28,7 +28,7 @@
   Header set X-XSS-Protection "1; mode=block"
   
   # Updated CORS headers
-  Header always set Access-Control-Allow-Origin "https://www.nocolleges.com"
+  Header always set Access-Control-Allow-Origin "https://www.onlinestudys.com"
   Header always set Access-Control-Allow-Methods "POST, OPTIONS"
   Header always set Access-Control-Allow-Headers "Content-Type"
   
