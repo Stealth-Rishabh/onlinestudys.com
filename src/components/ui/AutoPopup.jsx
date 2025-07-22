@@ -125,7 +125,11 @@ export default function AutoPopup() {
               <AdmissionFormPopup
                 utmParams={utmParams}
                 {...getFormConfig()}
-                onSuccess={() => setShowPopup(false)}
+                onSuccess={() => {
+                  setShowPopup(false);
+                  // Redirect to thankyou page after closing popup
+                  window.location.href = "/thankyou.html";
+                }}
               />
             </div>
           </div>
