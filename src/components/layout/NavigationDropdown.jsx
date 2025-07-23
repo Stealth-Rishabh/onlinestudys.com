@@ -120,7 +120,7 @@ const NavigationDropdown = () => {
               <ChevronDown className="w-4 h-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-54 rounded-lg mt-1 bg-white">
+          <DropdownMenuContent className="w-54 rounded-lg mt-1 bg-white z-[99]">
             {universities.map((university) => (
               <DropdownMenuItem key={university.name} asChild>
                 <Link href={university.href} className="flex items-center gap-2 cursor-pointer">
