@@ -29,7 +29,7 @@ export default function AutoPopup() {
     // Show popup after 10 seconds
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 10000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
