@@ -331,8 +331,8 @@ export default function Hallmarks() {
     <section className="py-20 px-4 bg-white relative">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Why Choose
             <span className="text-blue-500"> Chandigarh's Online MBA</span>
           </h2>
@@ -439,4 +439,4 @@ export default function Hallmarks() {
       </div>
     </section>
   );
-} 
+}

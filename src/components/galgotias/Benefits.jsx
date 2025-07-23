@@ -50,8 +50,8 @@ export default function Benefits() {
   return (
     <div className="w-full bg-slate-900 py-10 sm:py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
             The Online Advantage at
             <span className="text-blue-600 block">Galgotias University</span>
           </h2>

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-
+import { motion, AnimatePresence } from "framer-motion";
 const NavigationDropdown = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
@@ -148,36 +148,79 @@ const NavigationDropdown = () => {
           )}
         </Button>
 
-        {/* Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="absolute top-full  right-0 bg-white border-t border-gray-200 shadow-lg  min-w-[280px] z-[9999]">
-            <div className="px-4 py-6 space-y-4 ">
-              {programs.map((program) => (
-                <div key={program.name} className="space-y-2">
-                  <div className="flex items-center gap-2 text-gray-700 font-medium">
-                    {program.icon}
-                    {program.name}
-                  </div>
-                  <div className="ml-6 space-y-1 ">
-                    {program.universities.map((university) => (
-                      <Link
-                        key={university.name}
-                        href={university.href}
-                        className="block py-2 px-3 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                          {university.name}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Overlay with Framer Motion */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -32, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -24, scale: 0.98 }}
+              transition={{
+                type: "spring",
+                stiffness: 350,
+                damping: 32,
+                duration: 0.32,
+              }}
+              className="absolute top-12 w-screen rounded-b-3xl -right-5 drop-shadow-2xl bg-white border-t border-gray-200 shadow-lg min-w-[280px] z-[9999]"
+              style={{ originY: 0.1 }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                transition={{ delay: 0.08, duration: 0.22 }}
+                className="px-4 py-6 space-y-4"
+              >
+                {programs.map((program, i) => (
+                  <motion.div
+                    key={program.name}
+                    className="space-y-2"
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -16 }}
+                    transition={{
+                      delay: 0.12 + i * 0.04,
+                      duration: 0.22,
+                      type: "tween",
+                    }}
+                  >
+                    <div className="flex items-center gap-2 text-green-700 font-medium text-xl">
+                      {program.icon}
+                      {program.name}
+                    </div>
+                    <div className="sm:ml-6 space-y-1">
+                      {program.universities.map((university, j) => (
+                        <motion.div
+                          key={university.name}
+                          initial={{ opacity: 0, x: -8 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -8 }}
+                          transition={{
+                            delay: 0.18 + j * 0.03 + i * 0.04,
+                            duration: 0.18,
+                            type: "tween",
+                          }}
+                        >
+                          <Link
+                            href={university.href}
+                            className="block py-2 px-3 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors bg-green-50"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              {university.name}
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

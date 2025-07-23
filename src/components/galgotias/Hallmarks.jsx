@@ -300,8 +300,8 @@ export default function Hallmarks() {
   return (
     <section className="bg-white py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             The Hallmarks of Galgotias Online
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">

@@ -265,7 +265,7 @@ export default function AdmissionQuery({ utmParams }) {
               <h2 className="text-2xl font-bold text-blue-700 mb-2">
                 Get Free Admission Counseling
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 hidden md:block">
                 Speak with our experts and get personalized guidance for
                 Chandigarh University's Online MBA.
               </p>

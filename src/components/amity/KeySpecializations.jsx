@@ -123,16 +123,16 @@ export default function KeySpecializations() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <section className="py-10 sm:py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
             Choose Your Career Path
           </div> */}
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             MBA{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Specializations

@@ -85,7 +85,7 @@ export default function Universities() {
   );
 
   return (
-    <section className="py-16 px-4 bg-white relative">
+    <section className="py-10 sm:py-16 px-4 bg-white relative">
       <div className="hidden sm:block absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"
@@ -98,12 +98,12 @@ export default function Universities() {
       </div>
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           {/* <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <GraduationCap className="w-4 h-4" />
             World-Class Universities
           </div> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Choose your Online MBA Degree{" "}
             <span className="text-green-500 sm:block">
               from Amity University

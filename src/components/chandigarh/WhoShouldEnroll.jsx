@@ -40,11 +40,11 @@ export default function WhoShouldEnroll() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-100">
+    <section className="py-10 sm:py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-100">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
             Who Should Enroll For
             <span className="block bg-blue-500 bg-clip-text text-transparent">
               Chandigarh Online MBA
@@ -86,4 +86,4 @@ export default function WhoShouldEnroll() {
       </div>
     </section>
   );
-} 
+}

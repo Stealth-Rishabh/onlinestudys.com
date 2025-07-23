@@ -9,7 +9,8 @@ const faqData = [
   },
   {
     id: 2,
-    question: "What are the accreditations and recognitions of Chandigarh's Online MBA?",
+    question:
+      "What are the accreditations and recognitions of Chandigarh's Online MBA?",
     answer:
       "Chandigarh University is NAAC A+ accredited and UGC approved, ensuring high-quality education standards. The university is recognized for its innovation and global outlook, making its MBA degree highly valued by employers.",
   },
@@ -40,7 +41,9 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [openAccordionId, setOpenAccordionId] = useState(faqData[0]?.id || null);
+  const [openAccordionId, setOpenAccordionId] = useState(
+    faqData[0]?.id || null
+  );
   const contentRefs = useRef({});
 
   const toggleAccordion = (id) => {
@@ -48,7 +51,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="py-10 sm:py-20 relative">
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"
@@ -60,8 +63,8 @@ const FAQ = () => {
         ></div>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
+        <div className="mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
             Frequently asked questions
           </h2>
         </div>
@@ -141,4 +144,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ; 
+export default FAQ;

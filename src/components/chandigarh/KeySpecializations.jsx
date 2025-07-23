@@ -127,11 +127,11 @@ export default function KeySpecializations() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <section className="py-10 sm:py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             MBA{" "}
             <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Specializations
@@ -339,4 +339,4 @@ function SpecializationDetails({ spec, openAdmissionForm }) {
       </button>
     </div>
   );
-} 
+}

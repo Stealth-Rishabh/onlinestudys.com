@@ -66,7 +66,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white relative">
+    <section className="py-10 sm:py-16 px-4 bg-white relative">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5 overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -77,7 +77,7 @@ export default function Stats() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Why Choose{" "}
             <span className="text-orange-500">Parul Online MBA?</span>
           </h2>

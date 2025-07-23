@@ -21,7 +21,8 @@ const faqData = [
   },
   {
     id: 4,
-    question: "What is the eligibility criteria for admission to an online MCA program?",
+    question:
+      "What is the eligibility criteria for admission to an online MCA program?",
     answer:
       "To be eligible for admission into an online MCA program, candidates must have completed a bachelor's degree such as BCA, B.Sc. (Computer Science), B.Sc., B.Com., or B.A., with Mathematics as a subject at either the 10+2 level or during graduation.",
   },
@@ -44,7 +45,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="py-10 sm:py-20 relative">
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"
@@ -56,8 +57,8 @@ const FAQ = () => {
         ></div>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
+        <div className="mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
             Frequently asked questions
           </h2>
         </div>

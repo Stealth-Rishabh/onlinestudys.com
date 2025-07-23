@@ -309,7 +309,7 @@ export default function HeroSection() {
                 <h2 className="text-xl lg:text-3xl font-bold text-white">
                   Get Free Admission Counseling
                 </h2>
-                <p className="text-gray-300 text-xs lg:text-sm">
+                <p className="text-gray-300 text-xs lg:text-sm hidden md:block">
                   Speak with our experts and get personalized guidance
                 </p>
               </div>
