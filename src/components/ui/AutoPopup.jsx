@@ -87,7 +87,7 @@ export default function AutoPopup() {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -113,9 +113,9 @@ export default function AutoPopup() {
             {/* Header */}
             <div className="mb-6 pt-2">
               <h2 className="text-2xl font-bold bg-gray-900 text-transparent bg-clip-text">
-                Get Your Free Consultation
+              Begin Your Application 
               </h2>
-              <p className="text-gray-600 text-sm mt-1">
+              <p className="text-gray-600 text-sm mt-1 hidden md:block">
                 Fill the form below and we'll get back to you within 24 hours
               </p>
             </div>
