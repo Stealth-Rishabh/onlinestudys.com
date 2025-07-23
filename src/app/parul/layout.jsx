@@ -9,7 +9,7 @@ export const metadata = {
     description:
       "Enroll in online MBA from Parul University. Accredited distance learning MBA program with industry-focused curriculum.",
     type: "website",
-    url: "https://onlinestudys.com/parul",
+    url: "https://www.onlinestudys.com/parul",
     siteName: "Online Studys",
   },
   twitter: {

@@ -12,12 +12,17 @@ export const metadata = {
     "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
   keywords:
     "online MBA, distance learning MBA, MBA programs India, online MBA courses, MBA degree online, top MBA universities",
+  icons: {
+    icon: [{ url: "/favicon.png" }, { url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Online MBA from Top Universities - Online Studys",
     description:
       "2025's best online MBA programs in India ranked from leading online MBA offering universities in India. Explore now.",
     type: "website",
-    url: "https://onlinestudys.com",
+    url: "https://www.onlinestudys.com",
     siteName: "Online Studys",
   },
   twitter: {

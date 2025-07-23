@@ -4,7 +4,7 @@ import NavigationDropdown from "./NavigationDropdown";
 
 const Header = () => {
   return (
-    <nav className="bg-green-100 shadow relative z-10 border-gray-200">
+    <nav className="bg-green-100 shadow relative z-[99] border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-5 sm:p-1 sm:px-1">
         {/* Logo */}
         <Image
@@ -19,7 +19,7 @@ const Header = () => {
        
 
         {/* Accreditation Logos */}
-        <div className="sm:flex hidden flex-wrap items-center gap-2">
+        <div className="sm:flex  flex-wrap items-center gap-2">
           {/* <Image
             src="/c-naac.jpg"
             width={128}
@@ -42,7 +42,7 @@ const Header = () => {
             alt="Times Higher Education Ranking"
           /> */}
            {/* Navigation Dropdown */}
-        <div className="relative">
+        <div className="relative ">
           <NavigationDropdown />
         </div>
         </div>

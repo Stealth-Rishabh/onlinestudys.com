@@ -42,6 +42,13 @@ const NavigationDropdown = () => {
     // },
   ];
 
+  const universities = [
+    { name: "Amity University", href: "/amity" },
+    { name: "Galgotia University", href: "/galgotias" },
+    { name: "Chandigarh University", href: "/chandigarh" },
+    { name: "Parul University", href: "/parul" },
+  ];
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -65,8 +72,8 @@ const NavigationDropdown = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-4">
-        <DropdownMenu>
+      <div className="md:flex hidden items-center gap-4 ">
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             
             <Button
@@ -102,6 +109,27 @@ const NavigationDropdown = () => {
               </DropdownMenuSub>
             ))}
           </DropdownMenuContent>
+        </DropdownMenu> */}
+
+
+          <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="flex items-center gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2">
+              <BookOpen className="w-4 h-4" />
+              Explore Universities
+              <ChevronDown className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-54 rounded-lg mt-1 bg-white">
+            {universities.map((university) => (
+              <DropdownMenuItem key={university.name} asChild>
+                <Link href={university.href} className="flex items-center gap-2 cursor-pointer">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  {university.name}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
@@ -122,15 +150,15 @@ const NavigationDropdown = () => {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 min-w-[280px]">
-            <div className="px-4 py-6 space-y-4">
+          <div className="absolute top-full  right-0 bg-white border-t border-gray-200 shadow-lg  min-w-[280px] z-[9999]">
+            <div className="px-4 py-6 space-y-4 ">
               {programs.map((program) => (
                 <div key={program.name} className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-700 font-medium">
                     {program.icon}
                     {program.name}
                   </div>
-                  <div className="ml-6 space-y-1">
+                  <div className="ml-6 space-y-1 ">
                     {program.universities.map((university) => (
                       <Link
                         key={university.name}

@@ -9,7 +9,7 @@ export const metadata = {
     description:
       "Enroll in online MBA from Galgotias University. Accredited distance learning MBA program with modern curriculum.",
     type: "website",
-    url: "https://onlinestudys.com/galgotias",
+    url: "https://www.onlinestudys.com/galgotias",
     siteName: "Online Studys",
   },
   twitter: {

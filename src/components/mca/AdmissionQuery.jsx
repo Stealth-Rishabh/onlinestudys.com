@@ -249,7 +249,7 @@ export default function AdmissionQuery({ utmParams }) {
             />
 
             <motion.div
-              className="fixed px-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm z-50 rounded-xl shadow-2xl"
+              className="fixed px-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm z-[999] rounded-xl shadow-2xl"
               initial={{ y: "-100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}

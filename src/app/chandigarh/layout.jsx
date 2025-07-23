@@ -9,7 +9,7 @@ export const metadata = {
     description:
       "Enroll in online MBA from Chandigarh University. Accredited distance learning MBA program with industry-aligned curriculum.",
     type: "website",
-    url: "https://onlinestudys.com/chandigarh",
+    url: "https://www.onlinestudys.com/chandigarh",
     siteName: "Online Studys",
   },
   twitter: {

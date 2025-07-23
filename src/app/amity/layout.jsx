@@ -9,7 +9,7 @@ export const metadata = {
     description:
       "Enroll in online MBA from Amity University. Accredited distance learning MBA program with flexible study options.",
     type: "website",
-    url: "https://onlinestudys.com/amity",
+    url: "https://www.onlinestudys.com/amity",
     siteName: "Online Studys",
   },
   twitter: {

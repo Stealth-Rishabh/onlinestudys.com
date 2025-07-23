@@ -9,7 +9,7 @@ export const metadata = {
     description:
       "Discover the best online universities & colleges for MCA -Online Studys - We offer cost effective price with proper amenities and highly qualified mentors, faculties get the chance to learn on live classes",
     type: "website",
-    url: "https://onlinestudys.com/mca",
+    url: "https://www.onlinestudys.com/mca",
     siteName: "Online Studys",
   },
   twitter: {
