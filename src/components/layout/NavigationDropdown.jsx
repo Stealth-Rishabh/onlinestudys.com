@@ -139,12 +139,12 @@ const NavigationDropdown = () => {
           variant="ghost"
           size="icon"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="text-gray-700 hover:text-green-600"
+          className="text-gray-700 hover:text-green-600 bg-green-50 shadow rounded"
         >
           {isMobileMenuOpen ? (
             <X className="w-5 h-5" />
           ) : (
-            <Menu className="w-5 h-5" />
+            <Menu className="w-10 h-10" />
           )}
         </Button>
 
