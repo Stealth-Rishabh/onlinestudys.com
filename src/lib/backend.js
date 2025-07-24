@@ -5,10 +5,15 @@ export const submitLead = async (apiPayload) => {
     const baseUrl =
       "https://glawebapi.glaonline.com/api/ChannelPartner/CPRegistrationOnline_API";
 
-    const filteredPayload = Object.fromEntries(
-      Object.entries(apiPayload).filter(([, v]) => v !== undefined)
+    // Convert undefined values to empty strings instead of filtering them out
+    const processedPayload = Object.fromEntries(
+      Object.entries(apiPayload).map(([key, value]) => [
+        key,
+        value === undefined ? "" : value,
+      ])
     );
-    const queryParams = new URLSearchParams(filteredPayload).toString();
+
+    const queryParams = new URLSearchParams(processedPayload).toString();
     const apiUrl = `${baseUrl}?${queryParams}`;
 
     console.log("Sending GET request to API:", apiUrl);

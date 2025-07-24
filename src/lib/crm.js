@@ -13,10 +13,10 @@ export const submitAdmissionQuery = async (formData, utmParams = {}) => {
       source: "Stealth",
       City: formData.city,
       utm_source: utmParams.utm_source || "Stealth",
-      utm_medium: utmParams.utm_medium,
-      utm_campaign: utmParams.utm_campaign || utmParams.campaign,
-      utm_term: utmParams.utm_term,
-      utm_content: utmParams.utm_content,
+      utm_medium: utmParams.utm_medium || "",
+      utm_campaign: utmParams.utm_campaign || utmParams.campaign || "",
+      utm_term: utmParams.utm_term || "",
+      utm_content: utmParams.utm_content || "",
     };
 
     console.log("Constructed payload for new API:", apiPayload);
