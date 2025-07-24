@@ -37,7 +37,7 @@ export default function LandingPage() {
       <AdmissionQuery utmParams={utmParams} />
       <AutoPopup />
       {/* <HeroSection /> */}
-      <Banner />
+      <Banner utmParams={utmParams} />
       <AccreditationLogoMobile />
       <Universities />
       <WhoShouldEnroll />
