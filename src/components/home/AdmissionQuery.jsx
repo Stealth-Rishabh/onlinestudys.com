@@ -149,9 +149,9 @@ export default function AdmissionQuery({ utmParams }) {
       };
       const dataForSheet = {
         ...sanitizedFormData,
-        utm_source: "Stealth",
+        campaign: utmParams?.campaign || utmParams?.utm_campaign,
+        utm_source: utmParams?.utm_source || "Stealth", // Use URL parameter instead of hardcoding
         utm_medium: utmParams?.utm_medium,
-        utm_campaign: utmParams?.utm_campaign,
         utm_term: utmParams?.utm_term,
         utm_content: utmParams?.utm_content,
       };

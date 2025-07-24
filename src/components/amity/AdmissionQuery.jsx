@@ -161,7 +161,7 @@ export default function AdmissionQuery({ utmParams }) {
           body: JSON.stringify({
             ...sanitizedFormData,
             campaign: utmParams?.campaign || utmParams?.utm_campaign,
-            utm_source: "Stealth",
+            utm_source: utmParams?.utm_source || "Stealth", // Use URL parameter instead of hardcoding
             utm_medium: utmParams?.utm_medium,
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,

@@ -12,7 +12,7 @@ export const submitAdmissionQuery = async (formData, utmParams = {}) => {
       ProgramCode: formData.coursesid || "OGLAMBA201",
       source: "Stealth",
       City: formData.city,
-      utm_source: utmParams.utm_source || "Stealth", // Use URL parameter instead of hardcoding
+      utm_source: utmParams.utm_source || "Stealth",
       utm_medium: utmParams.utm_medium,
       utm_campaign: utmParams.utm_campaign || utmParams.campaign,
       utm_term: utmParams.utm_term,

@@ -165,7 +165,7 @@ export default function HeroSection() {
           body: JSON.stringify({
             ...sanitizedFormData,
             campaign: utmParams?.campaign || utmParams?.utm_campaign,
-            utm_source: "Stealth",
+            utm_source: utmParams?.utm_source || "Stealth",
             utm_medium: utmParams?.utm_medium,
             utm_term: utmParams?.utm_term,
             utm_content: utmParams?.utm_content,
@@ -409,7 +409,11 @@ export default function HeroSection() {
                       ? "⌛Please wait ! Form is Submitting..."
                       : "Get Free Counseling"}
                   </span>
-                 {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                  {isSubmitting ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
                 </button>
               </form>
 
