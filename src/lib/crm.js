@@ -12,6 +12,13 @@ export const submitAdmissionQuery = async (formData, utmParams = {}) => {
       ProgramCode: formData.coursesid || "OGLAMBA201",
       source: "Stealth",
       City: formData.city,
+      // Try different field names that CRM might expect
+      Source: utmParams.utm_source || "Stealth",
+      Medium: utmParams.utm_medium || "",
+      Campaign: utmParams.utm_campaign || utmParams.campaign || "",
+      Term: utmParams.utm_term || "",
+      Content: utmParams.utm_content || "",
+      // Keep original UTM fields as backup
       utm_source: utmParams.utm_source || "Stealth",
       utm_medium: utmParams.utm_medium || "",
       utm_campaign: utmParams.utm_campaign || utmParams.campaign || "",
