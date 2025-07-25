@@ -3,7 +3,7 @@
 export const submitLead = async (apiPayload) => {
   try {
     const baseUrl =
-      "https://glawebapi.glaonline.com/api/ChannelPartner/CPRegistrationOnline_API";
+      "https://glawebapi.glaonline.com/api/ChannelPartner/GLACampaignPostAPI";
 
     // Convert undefined values to empty strings instead of filtering them out
     const processedPayload = Object.fromEntries(
