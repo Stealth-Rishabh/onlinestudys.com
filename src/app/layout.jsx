@@ -44,13 +44,13 @@ export default function RootLayout({ children }) {
         {/* Google Site Verification */}
         <meta
           name="google-site-verification"
-          content="QNe5bEKwiwWRpzNKSe5xB8UZb_eK1LfLDiwODLE3aEk"
+          content="s6buXJMlfk_pHSktD6Ktsh_rZhOHYn0uGHR_TTP4A1g"
         />
 
         {/* Google tag (gtag.js) */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-FM76F125F8"
+          src="https://www.googletagmanager.com/gtag/js?id=G-2Y12Z9YHK1"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-FM76F125F8');
+              gtag('config', 'G-2Y12Z9YHK1');
             `,
           }}
         />
