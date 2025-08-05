@@ -72,7 +72,7 @@ const NavigationDropdown = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="md:flex hidden items-center gap-4 ">
+      <div className="flex items-center gap-4 ">
         {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             
@@ -111,10 +111,12 @@ const NavigationDropdown = () => {
           </DropdownMenuContent>
         </DropdownMenu> */}
 
-
-          <DropdownMenu>
+        <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="flex items-center gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2">
+            <Button
+              variant="ghost"
+              className="flex w-full items-center justify-start cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2"
+            >
               <BookOpen className="w-4 h-4" />
               Explore Universities
               <ChevronDown className="w-4 h-4" />
@@ -123,7 +125,10 @@ const NavigationDropdown = () => {
           <DropdownMenuContent className="w-54 rounded-lg mt-1 bg-white z-[99]">
             {universities.map((university) => (
               <DropdownMenuItem key={university.name} asChild>
-                <Link href={university.href} className="flex items-center gap-2 cursor-pointer">
+                <Link
+                  href={university.href}
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   {university.name}
                 </Link>
@@ -134,7 +139,7 @@ const NavigationDropdown = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden relative" ref={mobileMenuRef}>
+      {/* <div className="md:hidden relative" ref={mobileMenuRef}>
         <Button
           variant="ghost"
           size="icon"
@@ -146,10 +151,10 @@ const NavigationDropdown = () => {
           ) : (
             <Menu className="w-10 h-10" />
           )}
-        </Button>
+        </Button> */}
 
-        {/* Mobile Menu Overlay with Framer Motion */}
-        <AnimatePresence>
+      {/* Mobile Menu Overlay with Framer Motion */}
+      {/* <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
               key="mobile-menu"
@@ -220,8 +225,8 @@ const NavigationDropdown = () => {
               </motion.div>
             </motion.div>
           )}
-        </AnimatePresence>
-      </div>
+        </AnimatePresence> */}
+      {/* </div> */}
     </>
   );
 };

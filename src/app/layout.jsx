@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { AdmissionFormProvider } from "@/context/AdmissionFormContext";
+import Footer from "@/components/layout/Footer";
 // import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -91,6 +92,7 @@ export default function RootLayout({ children }) {
         <AdmissionFormProvider>
           <Header />
           {children}
+          <Footer />
         </AdmissionFormProvider>
       </body>
     </html>

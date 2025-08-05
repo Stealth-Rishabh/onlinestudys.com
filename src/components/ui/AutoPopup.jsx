@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AdmissionFormPopup from "./AdmissionFormPopup";
 
-export default function AutoPopup() {
+export default function AutoPopup({ onClose, forceShow = false }) {
   const [showPopup, setShowPopup] = useState(false);
   const [utmParams, setUtmParams] = useState({});
   const pathname = usePathname();
@@ -26,13 +26,27 @@ export default function AutoPopup() {
       setUtmParams(params);
     }
 
-    // Show popup after 10 seconds
+    // If forceShow is true, show popup immediately
+    if (forceShow) {
+      setShowPopup(true);
+      return;
+    }
+
+    // Show popup after 5 seconds (only if not forced)
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [forceShow]);
+
+  // Handle popup close
+  const handleClose = () => {
+    setShowPopup(false);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   // Get the appropriate form configuration based on the current page
   const getFormConfig = () => {
@@ -91,7 +105,7 @@ export default function AutoPopup() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={() => setShowPopup(false)}
+        onClick={handleClose}
       >
         <motion.div
           className="fixed px-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm z-[70] rounded-xl shadow-2xl"
@@ -104,7 +118,7 @@ export default function AutoPopup() {
           <div className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl relative">
             {/* Close button */}
             <button
-              onClick={() => setShowPopup(false)}
+              onClick={handleClose}
               className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
             >
               <X className="w-5 h-5 text-gray-500" />
@@ -126,7 +140,7 @@ export default function AutoPopup() {
                 utmParams={utmParams}
                 {...getFormConfig()}
                 onSuccess={() => {
-                  setShowPopup(false);
+                  handleClose();
                   // Redirect to thankyou page after closing popup
                   window.location.href = "/thankyou.html";
                 }}
