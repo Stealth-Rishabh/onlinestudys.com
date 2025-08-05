@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
           <p className="text-white text-sm">
-            © 2024 EduHub. All rights reserved.
+            © 2025 OnlineStudys. All rights reserved.
           </p>
           {/* <div className="flex space-x-6">
             <Link
