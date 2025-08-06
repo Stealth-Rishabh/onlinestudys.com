@@ -41,6 +41,15 @@ const Header = () => {
             <div className="relative">
               <NavigationDropdown />
             </div>
+            <Link href="/about-us">
+              <Button
+                variant="link"
+                // className="flex items-center cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2 text-sm lg:text-base px-3 py-2"
+                className="cursor-pointer"
+              >
+                About Us
+              </Button>
+            </Link>
             <Button
               variant="link"
               // className="flex items-center cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2 text-sm lg:text-base px-3 py-2"
@@ -91,6 +100,17 @@ const Header = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
             <div className="px-3 py-2">
               <NavigationDropdown />
+            </div>
+            <div className="px-3 py-2">
+              <Link href="/about-us" onClick={closeMobileMenu}>
+                <Button
+                  variant="link"
+                  // className="w-full justify-start text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2 text-sm"
+                  className="cursor-pointer text-black"
+                >
+                  About Us
+                </Button>
+              </Link>
             </div>
             <div className="px-3 py-2">
               <Button

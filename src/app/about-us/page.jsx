@@ -19,9 +19,11 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import AutoPopup from "@/components/ui/AutoPopup";
 
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState({});
+  const [showCounsellingPopup, setShowCounsellingPopup] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,7 +48,6 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-400/10 animate-pulse"></div>
@@ -113,7 +114,10 @@ export default function AboutUs() {
                 affordable, and engaging way for you to acquire new skills,
                 advance your career, and pursue your passions.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 group transition-all duration-300 hover:scale-105 hover:shadow-lg">
+              <Button
+                onClick={() => setShowCounsellingPopup(true)}
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 group transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -203,7 +207,9 @@ export default function AboutUs() {
                     : "opacity-0 translate-y-10"
                 }`}
               >
-                <Card className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group hover:-translate-y-2 h-full bg-green-100`}>
+                <Card
+                  className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group hover:-translate-y-2 h-full bg-green-100`}
+                >
                   <CardContent className="p-5 text-center">
                     <item.icon className="h-12 w-12 text-green-600 mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-green-500" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
@@ -339,6 +345,13 @@ export default function AboutUs() {
           animation: float-delayed 8s ease-in-out infinite;
         }
       `}</style>
+
+      {showCounsellingPopup && (
+        <AutoPopup
+          onClose={() => setShowCounsellingPopup(false)}
+          forceShow={true}
+        />
+      )}
     </div>
   );
 }
