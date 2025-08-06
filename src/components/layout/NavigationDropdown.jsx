@@ -114,8 +114,9 @@ const NavigationDropdown = () => {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              variant="ghost"
-              className="flex w-full items-center justify-start cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2"
+              variant="link"
+              // className="flex w-full items-center justify-start cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2"
+              className="cursor-pointer text-black md:text-white"
             >
               <BookOpen className="w-4 h-4" />
               Explore Universities
