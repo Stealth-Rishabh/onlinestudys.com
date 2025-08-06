@@ -15,13 +15,19 @@ export default function Footer() {
     { name: "MBA", href: "/" },
   ];
 
+  const quickLinks = [
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact Us", href: "/contact-us" },
+    { name: "FAQ", href: "#faq" },
+  ];
+
   return (
     <footer
       className="bg-black/90 text-white border-t border-gray-200"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Logo Column */}
           <div className="space-y-4 md:col-span-2">
             <div className="flex items-center space-x-2">
@@ -33,12 +39,12 @@ export default function Footer() {
                 className="h-12 w-auto sm:h-14 md:h-16 drop-shadow-lg"
               />
             </div>
-            <p className="text-white text-sm leading-relaxed max-w-lg">
+            <p className="text-white text-sm leading-relaxed max-w-md">
               Ready to upskill? Choose from our extensive range of online and
               distance degrees. Find the perfect course to fit your schedule and
               career goals.
             </p>
-            <p className="text-white text-sm leading-relaxed max-w-lg">
+            <p className="text-white text-sm leading-relaxed max-w-md">
               OnlineStudys is your one-stop platform to search for best Online
               MBA colleges in India. We bring together the best online
               institutions, offering Online MBA program designed to help you
@@ -82,6 +88,25 @@ export default function Footer() {
                       className="text-white hover:text-blue-600 transition-colors duration-200 text-sm"
                     >
                       {program.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          {/* Quick Links Column */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+            <nav aria-label="Quick Links">
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-white hover:text-blue-600 transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
                     </Link>
                   </li>
                 ))}

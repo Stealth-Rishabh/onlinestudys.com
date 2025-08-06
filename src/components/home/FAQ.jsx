@@ -44,7 +44,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-10 sm:py-20 relative">
+    <section id="faq" className="py-10 sm:py-20 relative">
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"

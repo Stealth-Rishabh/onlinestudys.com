@@ -210,7 +210,7 @@ export default function StaticAdmissionForm({ utmParams }) {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-gray-50 p-6 lg:scale-90 rounded-xl shadow-2xl w-full max-w-md mx-auto">
+    <div className="bg-gradient-to-br from-white to-gray-50 p-6 lg:scale-85 xl:scale-90 rounded-xl shadow-2xl w-full max-w-md mx-auto">
       <div className="mb-3">
         <h2 className="text-2xl font-bold text-gray-900">
           Enquire for Online MBA
