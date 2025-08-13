@@ -119,10 +119,24 @@ export default function Footer() {
         <hr className="my-8 border-gray-200" />
 
         {/* Bottom section */}
-        <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
+        <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-white text-sm">
             © 2025 OnlineStudys. All rights reserved.
           </p>
+          <div className="flex items-center gap-4 sm:gap-8">
+            <Link
+              href="/privacy-policy"
+              className="text-white hover:text-gray-700 text-sm transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-conditions"
+              className="text-white hover:text-gray-700 text-sm transition-colors duration-200"
+            >
+              Terms of Service
+            </Link>
+          </div>
           {/* <div className="flex space-x-6">
             <Link
               href="/privacy"
