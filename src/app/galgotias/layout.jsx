@@ -18,6 +18,9 @@ export const metadata = {
     description:
       "Enroll in online MBA from Galgotias University. Accredited distance learning MBA program with modern curriculum.",
   },
+  alternates: {
+    canonical: "https://www.onlinestudys.com/galgotias",
+  },
   robots: {
     index: true,
     follow: true,

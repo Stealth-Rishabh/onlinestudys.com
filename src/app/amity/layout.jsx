@@ -18,6 +18,9 @@ export const metadata = {
     description:
       "Enroll in online MBA from Amity University. Accredited distance learning MBA program with flexible study options.",
   },
+  alternates: {
+    canonical: "https://www.onlinestudys.com/amity",
+  },
   robots: {
     index: true,
     follow: true,

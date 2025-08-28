@@ -18,6 +18,9 @@ export const metadata = {
     description:
       "Enroll in online MBA from Chandigarh University. Accredited distance learning MBA program with industry-aligned curriculum.",
   },
+  alternates: {
+    canonical: "https://www.onlinestudys.com/chandigarh",
+  },
   robots: {
     index: true,
     follow: true,

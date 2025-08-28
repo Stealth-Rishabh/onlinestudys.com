@@ -36,6 +36,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://www.onlinestudys.com",
+  },
 };
 
 export default function RootLayout({ children }) {

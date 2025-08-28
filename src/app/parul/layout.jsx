@@ -18,6 +18,9 @@ export const metadata = {
     description:
       "Enroll in online MBA from Parul University. Accredited distance learning MBA program with industry-focused curriculum.",
   },
+  alternates: {
+    canonical: "https://www.onlinestudys.com/parul",
+  },
   robots: {
     index: true,
     follow: true,
