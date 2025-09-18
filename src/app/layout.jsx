@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import { AdmissionFormProvider } from "@/context/AdmissionFormContext";
 import Footer from "@/components/layout/Footer";
+import QueryProvider from "@/components/providers/QueryProvider";
 // import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -92,11 +93,13 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
 
-        <AdmissionFormProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AdmissionFormProvider>
+        <QueryProvider>
+          <AdmissionFormProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AdmissionFormProvider>
+        </QueryProvider>
       </body>
     </html>
   );

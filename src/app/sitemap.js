@@ -5,10 +5,10 @@ export const dynamic = "force-dynamic";
 
 // API endpoints
 const WORDPRESS_BLOG_API =
-  "https://your-wordpress-domain.com/wp-json/wp/v2/posts";
+  "https://onlinestudys.com/wordpress/wp-json/wp/v2/posts";
 const CAREER_API = process.env.NEXT_PUBLIC_API_BASE_URL
   ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/indexCareer.php`
-  : "https://your-api-domain.com/api/indexCareer.php";
+  : "https://onlinestudys.com/api/indexCareer.php";
 
 // Static routes with their metadata
 const staticRoutes = [

@@ -58,7 +58,7 @@ const Header = () => {
             >
               Free Counselling
             </Button>
-            {/* <Link href="/blog">
+            <Link href="/blog">
               <Button
                 variant="link"
                 // className="flex items-center cursor-pointer gap-2 text-green-700 hover:text-green-600 hover:bg-green-50 bg-white ring-2 ring-green-200 ring-offset-2 text-sm lg:text-base px-3 py-2"
@@ -66,7 +66,7 @@ const Header = () => {
               >
                 Blogs
               </Button>
-            </Link> */}
+            </Link>
             <Link href="/contact-us">
               <Button
                 variant="link"
