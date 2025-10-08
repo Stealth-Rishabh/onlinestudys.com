@@ -25,15 +25,18 @@ const Header = () => {
       <nav className="bg-black/90 text-white shadow-lg relative z-[99] border-gray-200">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 py-2">
           {/* Logo */}
+
           <div className="flex-shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Online Studys Logo"
-              width={150}
-              height={64}
-              className="h-12 w-auto sm:h-14 md:h-16 drop-shadow-"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Online Studys Logo"
+                width={150}
+                height={64}
+                className="h-12 w-auto sm:h-14 md:h-16 drop-shadow-"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
